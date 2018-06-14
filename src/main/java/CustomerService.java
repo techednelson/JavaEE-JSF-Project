@@ -1,9 +1,7 @@
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ApplicationScoped;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 @ManagedBean(name = "customerService")
 @ApplicationScoped
@@ -25,18 +23,13 @@ public class CustomerService {
         users[7] = "Wonderwoman";
         users[8] = "Torn";
         users[9] = "Maroon5";
-        
+
         firstNames = new String[10];
         firstNames[0] = "John";
         firstNames[1] = "George";
         firstNames[2] = "Luis";
         firstNames[3] = "Miguel";
         firstNames[4] = "Jenifer";
-        firstNames[5] = "Patrick";
-        firstNames[6] = "Homer";
-        firstNames[7] = "Elvis";
-        firstNames[8] = "Alicia";
-        firstNames[9] = "Christina";
 
         lastNames = new String[10];
         lastNames[0] = "Smith";
@@ -44,11 +37,6 @@ public class CustomerService {
         lastNames[2] = "Williams";
         lastNames[3] = "Woods";
         lastNames[4] = "Hierro";
-        lastNames[5] = "Messi";
-        lastNames[6] = "Dylan";
-        lastNames[7] = "Levin";
-        lastNames[8] = "Aguilera";
-        lastNames[9] = "Ford";
     }
 
     public List<Customer> createUsers(int size) {

@@ -3,6 +3,7 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+    xmlns:f = "http://java.sun.com/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
     xmlns:p="http://primefaces.org/ui">
 <h:head>
@@ -10,26 +11,53 @@
     <link type="text/css" rel="stylesheet" href="./css/style.css" />
 
 </h:head>
-<h:body id="bg">
+<h:body>
 
-<p:dataTable var="customer" value="#{dtBasicView.cars}" styleClass="bg" >
-   
-    <p:column headerText="User">
-        <h:outputText value="#{customer.userName}" />
-    </p:column>
+    <p:tabMenu activeIndex="#{param.i}">
+        <p:menuitem value="Overview" outcome="/ui/menu/tabMenu" icon="ui-icon-star">
+            <f:param name="i" value="0" />
+        </p:menuitem>
+        <p:menuitem value="Demos" outcome="/ui/menu/tabMenu" icon="ui-icon-search">
+            <f:param name="i" value="1" />
+        </p:menuitem>
+        <p:menuitem value="Documentation" outcome="/ui/menu/tabMenu" icon="ui-icon-document">
+            <f:param name="i" value="2" />
+        </p:menuitem>
+        <p:menuitem value="Support" outcome="/ui/menu/tabMenu" icon="ui-icon-wrench">
+            <f:param name="i" value="3" />
+        </p:menuitem>
+        <p:menuitem value="Social" outcome="/ui/menu/tabMenu" icon="ui-icon-person">
+            <f:param name="i" value="4" />
+        </p:menuitem>
+    </p:tabMenu>
 
-    <p:column headerText="First Name">
-        <h:outputText value="#{customer.firstName}"  />
-    </p:column>
+    <h:form id="add">
+            <p:growl id="growl" life="2000" />
+            <p:commandButton value="Create Customer" id="create" update="growl" actionListener="#{buttonView.buttonAction}" styleClass="ui-priority-primary" />
+    </h:form>
 
-    <p:column headerText="Last Name">
-        <h:outputText value="#{customer.lastName}"  />
-    </p:column>
-    <p:column headerText="">
-        <h:outputText value=""  />
-    </p:column>
+    <p:dataTable var="customer" value="#{dtBasicView.customers}">
 
-</p:dataTable>
+        <p:column headerText="User">
+            <h:outputText value="#{customer.userName}" />
+        </p:column>
+
+        <p:column headerText="First Name">
+            <h:outputText value="#{customer.firstName}"  />
+        </p:column>
+
+        <p:column headerText="Last Name">
+            <h:outputText value="#{customer.lastName}"  />
+        </p:column>
+        <p:column headerText="">
+            <h:form>
+                    <p:growl id="growl" life="2000" />
+                    <p:commandButton value="modify" id="update" update="growl" actionListener="#{buttonView.buttonAction}" styleClass="ui-priority-primary" />
+                    <p:commandButton value="delete" id="delete" update="growl" actionListener="#{buttonView.buttonAction}" styleClass="ui-priority-primary" />
+            </h:form>
+        </p:column>
+
+    </p:dataTable>
 
 </h:body>
 </html>

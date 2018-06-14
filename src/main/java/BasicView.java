@@ -5,25 +5,29 @@ import javax.faces.bean.ManagedBean;
 import java.io.Serializable;
 import java.util.List;
 
+
 @ManagedBean(name="dtBasicView")
 @ViewScoped
 public class BasicView implements Serializable {
 
-    private List<Customer> cars;
+    private static final long serialVersionUID = 1L;
+
+    private List<Customer> customers;
 
     @ManagedProperty("#{customerService}")
     private CustomerService service;
 
     @PostConstruct
     public void init() {
-        cars = service.createUsers(10);
+        customers = service.createUsers(5);
     }
 
-    public List<Customer> getCars() {
-        return cars;
+    public List<Customer> getCustomers() {
+        return customers;
     }
 
     public void setService(CustomerService service) {
         this.service = service;
     }
+
 }

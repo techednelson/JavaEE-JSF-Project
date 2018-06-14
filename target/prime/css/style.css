@@ -1,6 +1,42 @@
 
-#bg {
-    background-color: red;
+body {
+    background-color: #221F4B;
 }
 
+#add {
+    margin: 1% 0 1% 3%;
+}
 
+.ui-datatable {
+    margin: 0 3%;
+    text-align: center;
+}
+
+.ui-datatable thead th {
+    color: #221F4B;
+}
+
+.ui-datatable tbody tr {
+    height: 5rem;
+}
+
+.ui-datatable-even {
+    background-color: #302C6C;
+    color: #A09FB2;
+}
+
+.ui-datatable-odd {
+    background-color: #DFDFDF;
+    color: #221F4B;
+}
+
+@media screen and (min-width: 769px) {
+
+    #add {
+        margin: 1% 0 1% 20%;
+    }
+
+    .ui-datatable {
+        margin: 0 20%;
+    }
+}
