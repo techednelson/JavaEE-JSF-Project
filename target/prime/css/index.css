@@ -1,0 +1,28 @@
+body {
+    border: 0;
+    margin: 0;
+    background-color: #221F4B;
+}
+
+#navbar {
+    margin: auto;
+    max-width: 100%;
+    color: #221F4B;
+}
+
+#introParagraph {
+    margin: auto;
+    max-width: 80%;
+    color: #A09FB2;
+    text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+    #navbar {
+        max-width: 70%;
+    }
+    #introParagraph {
+        max-width: 70%;
+    }
+}
+

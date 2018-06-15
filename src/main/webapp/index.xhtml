@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+    xmlns:f = "http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Prime Faces 6.2</title>
+        <link type="text/css" rel="stylesheet" href="./css/index.css" />
+
+    </h:head>
+<h:body>
+    <!--Menubar-->
+    <h:form id ="navbar">
+        <p:tabMenu activeIndex="#{param.i}">
+                <p:menuitem value="Home" url="#" icon="fa fa-home">
+                    <f:param name="i" value="0" />
+                </p:menuitem>
+                <p:menuitem value="Administration" url="#" icon="fa fa-key">
+                    <f:param name="i" value="1" />
+                </p:menuitem>
+                <p:menuitem value="About" url="#" icon="fa fa-info">
+                    <f:param name="i" value="2" />
+                </p:menuitem>
+            </p:tabMenu>
+    </h:form>
+
+    <!--Intro-->
+    <div id = "introParagraph">
+        <h1>FIND YOUR PERFECT JOB!</h1>
+        <h3>Welcome to PostJob, here you can find job offers according to your professional profile and experience. It's very easy to use, just click a job vacancy, login to see the details</h3>
+    </div>
+
+     <!--Carousel-->
+     <h:form id="carousel">
+    <p:carousel value="#{carouselView.cars}" headerText="Responsive" var="car" itemStyle="text-align:center" responsive="true">
+        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+            <f:facet name="header">
+                <p:graphicImage name="demo/images/car/#{car.brand}.gif"/> 
+            </f:facet>
+ 
+            <h:outputText value="Id:" />
+            <h:outputText value="#{car.id}" />
+ 
+            <h:outputText value="Year" />
+            <h:outputText value="#{car.year}" />
+ 
+            <h:outputText value="Color:" />
+            <h:outputText value="#{car.color}" style="color:#{car.color}"/>
+ 
+            <h:outputText value="Price" />
+            <h:outputText value="$#{car.price}" />
+        </p:panelGrid>
+    </p:carousel>
+ 
+</h:form>
+
+</h:body>
+</html>
