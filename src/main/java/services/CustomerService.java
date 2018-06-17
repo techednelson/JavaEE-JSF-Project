@@ -2,12 +2,12 @@ package services;
 
 import model.Customer;
 
-import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean(name = "customerService")
+@ManagedBean
 @ApplicationScoped
 public class CustomerService {
 
@@ -44,7 +44,7 @@ public class CustomerService {
     }
 
     public List<Customer> createUsers(int size) {
-        List<Customer> list = new ArrayList<Customer>();
+        List<Customer> list = new ArrayList<>();
         Customer customer;
 
         for(int i = 0 ; i < size ; i++) {
@@ -54,5 +54,10 @@ public class CustomerService {
 
         return list;
     }
+
+//    public void save(Customer customer) {
+//        FacesContext.getCurrentInstance().addMessage(null,
+//                new FacesMessage("Welcome " + customer.getFirstname() + " " + customer.getLastname()));
+//    }
 
 }

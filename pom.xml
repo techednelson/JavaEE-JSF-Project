@@ -32,15 +32,10 @@
           <version>8.0</version>
           <scope>provided</scope>
       </dependency>
-    <dependency>
-      <groupId>com.google.apis</groupId>
-      <artifactId>google-api-services-youtube</artifactId>
-      <version>v3-rev198-1.23.0</version>
-    </dependency>
   </dependencies>
 
   <build>
-    <finalName>prime</finalName>
+    <finalName>learnspanish</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

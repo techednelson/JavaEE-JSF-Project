@@ -19,7 +19,7 @@
                 <p:menuitem value="Home" url="#" icon="fa fa-home">
                     <f:param name="i" value="0" />
                 </p:menuitem>
-                <p:menuitem value="Administration" url="#" icon="fa fa-key">
+                <p:menuitem value="Admin" url="#" icon="fa fa-key">
                     <f:param name="i" value="1" />
                 </p:menuitem>
                 <p:menuitem value="About" url="#" icon="fa fa-info">
@@ -28,15 +28,15 @@
             </p:tabMenu>
 
         </h:form>
-            
+
          <!--Create new Customer button-->
         <h:form id="add">
                 <p:growl id="growl" life="2000" />
-                <p:commandButton value="" 
+                <p:commandButton
                     id="create"
-                    update="growl" 
-                    actionListener="#{buttonView.buttonAction}" 
-                    styleClass="ui-priority-primary" 
+                    update="growl"
+                    actionListener="#{buttonView.buttonAction}"
+                    styleClass="ui-priority-primary"
                     icon="fa fa-user-plus" />
         </h:form>
 
@@ -54,17 +54,17 @@
             <p:column headerText="">
                 <h:form>
                         <p:growl id="growl" life="2000" />
-                        <p:commandButton value="" 
-                                        id="update" 
-                                        update="growl" 
-                                        actionListener="#{buttonView.buttonAction}" 
-                                        styleClass="ui-priority-primary"  
+                        <p:commandButton value=""
+                                        id="update"
+                                        update="growl"
+                                        actionListener="#{buttonView.buttonAction}"
+                                        styleClass="ui-priority-primary"
                                         icon="fa fa-edit"/>
-                        <p:commandButton value="" 
-                                        id="delete" 
-                                        update="growl" 
-                                        actionListener="#{buttonView.buttonAction}" 
-                                        styleClass="ui-priority-primary"  
+                        <p:commandButton value=""
+                                        id="delete"
+                                        update="growl"
+                                        actionListener="#{buttonView.buttonAction}"
+                                        styleClass="ui-priority-primary"
                                         icon="fa fa-remove"/>
                 </h:form>
             </p:column>

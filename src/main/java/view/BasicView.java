@@ -1,7 +1,7 @@
 package view;
 
 import model.Customer;
-import VacanciesService;
+import services.CustomerService;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedProperty;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.List;
 
 
-@ManagedBean(name="dtBasicView")
+@ManagedBean
 @ViewScoped
 public class BasicView implements Serializable {
 
@@ -20,7 +20,7 @@ public class BasicView implements Serializable {
     private List<Customer> customers;
 
     @ManagedProperty("#{customerService}")
-    private VacanciesService service;
+    private CustomerService service;
 
     @PostConstruct
     public void init() {
@@ -31,7 +31,7 @@ public class BasicView implements Serializable {
         return customers;
     }
 
-    public void setService(VacanciesService service) {
+    public void setService(CustomerService service) {
         this.service = service;
     }
 

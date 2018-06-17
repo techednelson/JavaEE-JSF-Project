@@ -19,7 +19,7 @@
                 <p:menuitem value="Home" url="#" icon="fa fa-home">
                     <f:param name="i" value="0" />
                 </p:menuitem>
-                <p:menuitem value="Administration" url="#" icon="fa fa-key">
+                <p:menuitem value="Admin" url="#" icon="fa fa-key">
                     <f:param name="i" value="1" />
                 </p:menuitem>
                 <p:menuitem value="About" url="#" icon="fa fa-info">
@@ -28,43 +28,41 @@
             </p:tabMenu>
 
         </h:form>
-            
+
          <!--Create new Customer button-->
         <h:form id="add">
-                <p:growl id="growl" life="2000" />
-                <p:commandButton value="" 
-                    id="create"
-                    update="growl" 
-                    actionListener="#{buttonView.buttonAction}" 
-                    styleClass="ui-priority-primary" 
+                <p:growl id="addButton" life="2000" />
+                <p:commandButton
+                    update="addButton"
+                    action="new.xthml?faces-redirect=true"
+                    styleClass="ui-priority-primary"
                     icon="fa fa-user-plus" />
         </h:form>
 
          <!--Table-->
-        <p:dataTable var="customer" value="#{dtBasicView.customers}">
+        <p:dataTable var="customer" value="#{basicView.customers}">
             <p:column headerText="User">
                 <h:outputText value="#{customer.userName}" />
             </p:column>
             <p:column headerText="First Name">
-                <h:outputText value="#{customer.firstName}"  />
+                <h:outputText value="#{customer.firstname}"  />
             </p:column>
             <p:column headerText="Last Name">
-                <h:outputText value="#{customer.lastName}"  />
+                <h:outputText value="#{customer.lastname}"  />
             </p:column>
             <p:column headerText="">
                 <h:form>
                         <p:growl id="growl" life="2000" />
-                        <p:commandButton value="" 
-                                        id="update" 
-                                        update="growl" 
-                                        actionListener="#{buttonView.buttonAction}" 
-                                        styleClass="ui-priority-primary"  
+                        <p:commandButton value=""
+                                        id="update"
+                                        update="growl"
+                                        action="new.xthml?faces-redirect=true"
+                                        styleClass="ui-priority-primary"
                                         icon="fa fa-edit"/>
-                        <p:commandButton value="" 
-                                        id="delete" 
-                                        update="growl" 
-                                        actionListener="#{buttonView.buttonAction}" 
-                                        styleClass="ui-priority-primary"  
+                        <p:commandButton value=""
+                                        id="delete"
+                                        update="growl"
+                                        styleClass="ui-priority-primary"
                                         icon="fa fa-remove"/>
                 </h:form>
             </p:column>

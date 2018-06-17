@@ -1,42 +1,45 @@
 package model;
 
-import java.util.Date;
+import javax.faces.bean.ManagedBean;
 
+@ManagedBean
 public class Customer {
 
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private String userName;
-    private Date birthDate;
+//    private String birthDate;
     private String country;
     private String city;
     private String street;
-    private int zipcode;
+    private int zipCode;
     private String phoneNumber;
     private String email;
-    private boolean acceptTerms;
+////    private boolean acceptTerms;
+//
+    public Customer() {    }
 
-    public Customer(String userName, String firstName, String lastName) {
+    public Customer(String userName, String firstname, String lastname) {
         this.userName = userName;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 
-    public String getFirstName() {return firstName;}
+    public String getFirstname() {return firstname;}
 
-    public void setFirstName(String firstName) {this.firstName = firstName;}
+    public void setFirstname(String firstname) {this.firstname = firstname;}
 
-    public String getLastName() {return lastName;}
+    public String getLastname() {return lastname;}
 
-    public void setLastName(String lastName) {this.lastName = lastName;}
+    public void setLastname(String lastname) {this.lastname = lastname;}
 
     public String getUserName() {return userName;}
 
     public void setUserName(String userName) {this.userName = userName; }
 
-    public Date getBirthDate() {return birthDate;}
-
-    public void setBirthDate(Date birthDate) { this.birthDate = birthDate; }
+//    public String getBirthDate() {return birthDate;}
+//
+//    public void setBirthDate(String birthDate) { this.birthDate = birthDate; }
 
     public String getCountry() { return country;}
 
@@ -50,9 +53,9 @@ public class Customer {
 
     public void setStreet(String street) {this.street = street;}
 
-    public int getZipcode() {return zipcode;}
+    public int getZipCode() {return zipCode;}
 
-    public void setZipcode(int zipcode) {this.zipcode = zipcode;}
+    public void setZipCode(int zipCode) {this.zipCode = zipCode;}
 
     public String getPhoneNumber() { return phoneNumber;}
 
@@ -62,8 +65,9 @@ public class Customer {
 
     public void setEmail(String email) { this.email = email; }
 
-    public boolean getAcceptTerms() {return acceptTerms;}
 
-    public void setAcceptTerms(boolean acceptTerms) {this.acceptTerms = acceptTerms;}
+//    public boolean getAcceptTerms() {return acceptTerms;}
+//
+//    public void setAcceptTerms(boolean acceptTerms) {this.acceptTerms = acceptTerms;}
 
 }

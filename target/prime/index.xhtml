@@ -11,29 +11,27 @@
         <link type="text/css" rel="stylesheet" href="./css/index.css" />
 
     </h:head>
-<h:body>
-     <!--Menubar-->
-     <h:form id ="navbar">
-        <p:tabMenu activeIndex="#{param.i}">
-                <p:menuitem value="Home" url="#" icon="fa fa-home">
-                    <f:param name="i" value="0" />
-                </p:menuitem>
-                <p:menuitem value="Administration" url="#" icon="fa fa-key">
-                    <f:param name="i" value="1" />
-                </p:menuitem>
-                <p:menuitem value="About" url="#" icon="fa fa-info">
-                    <f:param name="i" value="2" />
-                </p:menuitem>
-            </p:tabMenu>
-     </h:form>
+    <h:body>
+        <!--Menubar-->
+        <h:form id ="navbar">
+            <p:tabMenu activeIndex="#{param.i}">
+                    <p:menuitem value="Home" url="#" icon="fa fa-home">
+                        <f:param name="i" value="0" />
+                    </p:menuitem>
+                    <p:menuitem value="Administration" url="#" icon="fa fa-key">
+                        <f:param name="i" value="1" />
+                    </p:menuitem>
+                    <p:menuitem value="About" url="#" icon="fa fa-info">
+                        <f:param name="i" value="2" />
+                    </p:menuitem>
+                </p:tabMenu>
+        </h:form>
 
-     <div id = "introParagraph">
-        <h1>FIND YOUR PERFECT JOB</h1>
-        <h3>Welcome to PostJob, here you can find job offers according to your professional profile and experience. It's very easy to use, just click a job vacancy, login to see the details</h3>
-     </div>
-     
-    <script type="text/javascript" 
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzURgY9YkVo-t4Vt6Ixlyzw5Yn32M_gwY;libraries=places">
-    </script>
-</h:body>
+        <!--Intro-->
+        <div id = "introParagraph">
+            <h1>FIND YOUR PERFECT JOB!</h1>
+            <h3>Welcome to PostJob, here you can find job offers according to your professional profile and experience. It's very easy to use, just click a job vacancy, login to see the details</h3>
+        </div>
+
+    </h:body>
 </html>
