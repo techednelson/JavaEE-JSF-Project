@@ -1,0 +1,8 @@
+database/StudentsDB.class
+controller/StudentsController.class
+services/StudentServiceImpl.class
+dao/StudentDao.class
+model/Student.class
+services/StudentService.class
+dao/StudentDaoImpl.class
+controller/ConfigurationBean.class

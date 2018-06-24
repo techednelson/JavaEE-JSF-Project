@@ -1,3 +1,8 @@
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/services/CustomerService.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/model/Customer.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/view/BasicView.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/services/StudentService.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/dao/StudentDaoImpl.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/database/StudentsDB.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/controller/ConfigurationBean.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/dao/StudentDao.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/model/Student.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/services/StudentServiceImpl.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/controller/StudentsController.java
