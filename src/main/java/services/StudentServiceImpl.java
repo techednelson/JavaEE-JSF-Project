@@ -26,6 +26,6 @@ public class StudentServiceImpl implements StudentService {
     public void updateStudent(Student student) { studentDao.merge(student); }
 
     @Override
-    public  void deleteStudent(Student student) { studentDao.remove(student); }
+    public void deleteStudent(Student student) { studentDao.remove(student); }
 
 }

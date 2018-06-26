@@ -4,5 +4,6 @@ services/StudentServiceImpl.class
 dao/StudentDao.class
 model/Student.class
 services/StudentService.class
+controller/NewStudentController.class
 dao/StudentDaoImpl.class
 controller/ConfigurationBean.class

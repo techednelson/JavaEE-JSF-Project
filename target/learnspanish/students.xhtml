@@ -7,19 +7,15 @@
 
     <h:head>
         <title>Learn Spanish</title>
+        <link rel="stylesheet" href="css/students.css"/>
     </h:head>
 
     <h:body>
 
-        <h:form prependId="false">
-
-            <p:growl id="messages" showDetail="true" />
-            <p:messages />
-
-            <p:dataTable id="students"
-                         var="student"
+        <h:form id="form">
+            <p:dataTable id="studentsDataTable"
                          value="#{studentsController.students}"
-                         editable="true"
+                         var="student"
                          rowKey="#{student.username}"
                          selection="#{studentsController.studentSelected}"
                          selectionMode="single">
@@ -27,61 +23,33 @@
                 <!--Header-->
                 <f:facet name="header">
                     Spanish Academy : Students' List
-                    <p:commandButton value="Add Student" action="new_student?faces-redirect=true" />
+                    <p:button value="Add Student" outcome="new_student" />
                 </f:facet>
 
                 <p:column headerText="Username">
-                    <p:cellEditor>
-                        <f:facet name="output">
-                            <h:outputText value="#{student.username}" />
-                        </f:facet>
-                        <f:facet name="input">
-                            <p:inputText value="#{student.username}" />
-                        </f:facet>
-                    </p:cellEditor>
+                    <h:outputText value="#{student.username}" />
                 </p:column>
                 <p:column headerText="Firstname">
-                    <p:cellEditor>
-                        <f:facet name="output">
-                            <h:outputText value="#{student.firstname}" />
-                        </f:facet>
-                        <f:facet name="input">
-                            <p:inputText value="#{student.firstname}" />
-                        </f:facet>
-                    </p:cellEditor>
+                    <h:outputText value="#{student.firstname}" />
                 </p:column>
                 <p:column headerText="Lastname">
-                    <p:cellEditor>
-                        <f:facet name="output">
-                            <h:outputText value="#{student.lastname}" />
-                        </f:facet>
-                        <f:facet name="input">
-                            <p:inputText value="#{student.lastname}" />
-                        </f:facet>
-                    </p:cellEditor>
+                    <h:outputText value="#{student.lastname}" />
                 </p:column>
                 <p:column headerText="Edit" style="width:50px">
-                    <p:rowEditor />
-                </p:column>
 
+                </p:column>
                 <!--Footer-->
                 <f:facet name="footer">
-                    <h:commandButton value="Back" action="index?faces-redirect=true" />
+                    <p:commandButton value="Delete"  process="@all" update="studentsDataTable"  actionListener="#{studentsController.deleteStudent}" icon="ui-icon-close"/>
                     <p:spacer height="5px;"/>
                 </f:facet>
-
-                <p:ajax event="rowEdit" listener="#{studentsControllern.editListener}">
-                </p:ajax>
-
             </p:dataTable>
-
-
-            <p:contextMenu for="students">
-                <p:menuitem value="Delete" update="students" icon="ui-icon-close" actionListener="#{studentsController.deletePerson}" ajax="false"/>
-            </p:contextMenu>
 
         </h:form>
 
-
     </h:body>
+    <script >
+
+
+    </script>
 </html>

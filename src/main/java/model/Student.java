@@ -12,7 +12,7 @@ public class Student {
     private String city;
     private String street;
     private Integer zipCode;
-    private String phoneNumber;
+    private Integer phoneNumber;
     private String email;
     private boolean acceptTerms;
 
@@ -57,9 +57,9 @@ public class Student {
 
     public void setZipCode(Integer zipCode) {this.zipCode = zipCode;}
 
-    public String getPhoneNumber() { return phoneNumber;}
+    public Integer getPhoneNumber() { return phoneNumber;}
 
-    public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber; }
+    public void setPhoneNumber(Integer phoneNumber) {this.phoneNumber = phoneNumber; }
 
     public String getEmail() {return email;}
 

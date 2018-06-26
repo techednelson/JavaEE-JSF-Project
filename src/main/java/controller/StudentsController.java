@@ -18,8 +18,6 @@ import java.util.List;
 @RequestScoped
 public class StudentsController implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
     @Inject
     private StudentService studentService;
 
@@ -33,11 +31,6 @@ public class StudentsController implements Serializable {
         studentSelected = new Student();
     }
 
-    public void editListener(RowEditEvent event) {
-        Student student = (Student) event.getObject();
-        studentService.updateStudent(student);
-    }
-
     public List<Student> getStudents() {
         return students;
     }
@@ -46,23 +39,12 @@ public class StudentsController implements Serializable {
         this.students = students;
     }
 
-    public Student getStudentSelected() {
-        return studentSelected;
-    }
+    public Student getStudentSelected() { return studentSelected; }
 
-    public void setStudentSelected(Student studentSelected) {
-        this.studentSelected = studentSelected;
-    }
+    public void setStudentSelected(Student studentSelected) { this.studentSelected = studentSelected; }
 
-    public void updateStudentSelected() {
+    public void updateStudent() {
         this.studentSelected = new Student();
-    }
-
-    public void addStudent() {
-        studentService.registerStudent(this.studentSelected);
-        this.studentSelected = null;
-        //List update
-        this.init();
     }
 
     public void deleteStudent() {
@@ -75,11 +57,5 @@ public class StudentsController implements Serializable {
     public StudentService getStudentService() { return studentService; }
 
     public void setStudentService(StudentService studentService) { this.studentService = studentService; }
-
-    public void showMessage() {
-        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "OK", "New student was registered.");
-
-        PrimeFaces.current().dialog().showMessageDynamic(message);
-    }
 
 }
