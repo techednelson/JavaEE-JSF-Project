@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb082059-dbf2-4536-83d9-245d45952890" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/StudentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/StudentsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/students.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/students.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/StudentsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/StudentsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/learnspanish.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/controller/StudentsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/controller/StudentsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/all-themes-1.0.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/primefaces-6.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/learnspanish/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/css/new_student.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/learnspanish/css/new_student.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/css/students.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/learnspanish/css/students.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/students.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/learnspanish/students.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +19,20 @@
       <file leaf-file-name="students.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/students.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="48" column="155" selection-start-line="48" selection-start-column="155" selection-end-line="48" selection-end-column="155" />
+            <state relative-caret-position="610">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/StudentsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="48" column="36" lean-forward="true" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,11 +54,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/controller/StudentsController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/students.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/new_student.css" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/StudentsController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/students.xhtml" />
       </list>
     </option>
@@ -124,21 +123,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projectJSF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaEE-JSF-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projectJSF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaEE-JSF-Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -223,12 +207,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530040834613</updated>
-      <workItem from="1530040839359" duration="8880000" />
+      <workItem from="1530040839359" duration="9760000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8880000" />
+    <option name="totallyTimeSpent" value="9760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1355" height="1057" extended-state="0" />
@@ -255,7 +239,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.234375" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10129475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2498096" />
       <window_info anchor="right" id="Bean Validation" />
       <window_info id="Web" side_tool="true" />
       <window_info id="Learn" />
@@ -276,16 +260,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/StudentsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -321,10 +295,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/StudentsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="48" column="36" lean-forward="true" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/students.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="48" column="155" selection-start-line="48" selection-start-column="155" selection-end-line="48" selection-end-column="155" />
+        <state relative-caret-position="610">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>

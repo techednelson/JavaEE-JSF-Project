@@ -4,18 +4,18 @@ import model.Student;
 import services.StudentService;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import javax.ejb.EJB;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
 
 @Named
-@RequestScoped
+@ApplicationScoped
 public class StudentsController implements Serializable {
 
-    @Inject
+    @EJB
     private StudentService studentService;
 
     private List<Student> students;
