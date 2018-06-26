@@ -13,12 +13,14 @@
     <h:body>
 
         <h:form id="form">
+
             <p:dataTable id="studentsDataTable"
-                         value="#{studentsController.students}"
-                         var="student"
-                         rowKey="#{student.username}"
-                         selection="#{studentsController.studentSelected}"
-                         selectionMode="single">
+                             value="#{studentsController.students}"
+                             var="student"
+                             rowKey="#{student.username}"
+                             selection="#{studentsController.studentSelected}"
+                             selectionMode="single"
+                             rendered="true">
 
                 <!--Header-->
                 <f:facet name="header">
@@ -40,11 +42,12 @@
                 </p:column>
                 <!--Footer-->
                 <f:facet name="footer">
-                    <p:commandButton value="Delete"  process="@all" update="studentsDataTable"  actionListener="#{studentsController.deleteStudent}" icon="ui-icon-close"/>
+
                     <p:spacer height="5px;"/>
                 </f:facet>
-            </p:dataTable>
 
+            </p:dataTable>
+            <p:commandButton value="Delete"  actionListener="#{studentsController.deleteStudent}"  update="studentsDataTable"/>
         </h:form>
 
     </h:body>
