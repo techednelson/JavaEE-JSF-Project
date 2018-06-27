@@ -18,7 +18,7 @@ public class StudentDaoImpl implements StudentDao {
     @Override
     public Student find(Student student) {
         for (Student studentInDB: StudentsDB.students) {
-            if(student.getUsername().equals(studentInDB.getUsername())) {
+            if(student.getID().equals(studentInDB.getID())) {
                 return studentInDB;
             }
         }
@@ -28,7 +28,7 @@ public class StudentDaoImpl implements StudentDao {
     @Override
     public void merge(Student student) {
         for (Student studentInDB: StudentsDB.students) {
-            if(student.getUsername().equals(studentInDB.getUsername())) {
+            if(student.getID().equals(studentInDB.getID())) {
                 StudentsDB.students.remove(studentInDB);
                 StudentsDB.students.add(student);
                 return;
@@ -39,14 +39,10 @@ public class StudentDaoImpl implements StudentDao {
     @Override
     public void remove(Student student) {
         for (Student studentInDB: StudentsDB.students) {
-            if(student.getUsername().equals(studentInDB.getUsername())) {
+            if(student.getID().equals(studentInDB.getID())) {
                 StudentsDB.students.remove(studentInDB);
             }
         }
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 }

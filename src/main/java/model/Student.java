@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Student {
 
+    private Integer ID;
     private String username;
     private String firstname;
     private String lastname;
@@ -18,12 +19,27 @@ public class Student {
 
     public Student() { }
 
-    public Student(String username, String firstname, String lastname) {
+    public Student(Integer ID, String username, String firstname,
+                   String lastname, Date birthDate, String country,
+                   String city, String street, Integer zipCode,
+                   Integer phoneNumber, String email, boolean acceptTerms) {
+        this.ID = ID;
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.birthDate = birthDate;
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.acceptTerms = acceptTerms;
     }
 
+    public Integer getID() { return ID; }
+
+    public void setID(Integer ID) { this.ID = ID; }
 
     public String getFirstname() {return firstname;}
 

@@ -5,22 +5,22 @@ import services.StudentService;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
 
 @Named
-@ApplicationScoped
+@SessionScoped
 public class StudentsController implements Serializable {
 
     @EJB
     private StudentService studentService;
 
     private List<Student> students;
-
     private Student studentSelected;
+    private Student studentToUpdate;
 
     @PostConstruct
     public void init() {
@@ -32,27 +32,31 @@ public class StudentsController implements Serializable {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
-
     public Student getStudentSelected() { return studentSelected; }
 
-    public void setStudentSelected(Student studentSelected) { this.studentSelected = studentSelected; }
+    public void setStudentSelected(Student studentSelectedFromTable) {
+        studentSelected = studentSelectedFromTable;
+    }
+
+    public Student getStudentToUpdate() { return studentToUpdate; }
+
+    public String editStudentRecord() {
+        searchStudentToUpdate();
+        return "update_student?faces-redirect=true";
+    }
+
+    private void searchStudentToUpdate() {
+        studentToUpdate = studentService.getStudent(studentSelected);
+    }
 
     public void updateStudent() {
-        this.studentSelected = new Student();
+        studentService.updateStudent(studentToUpdate);
     }
 
     public void deleteStudent() {
-        studentService.deleteStudent(this.studentSelected);
-        this.studentSelected = null;
-        //List update
-        this.init();
+        studentService.deleteStudent(studentSelected);
+        studentSelected = null;
+        init();  //List update
     }
-
-    public StudentService getStudentService() { return studentService; }
-
-    public void setStudentService(StudentService studentService) { this.studentService = studentService; }
 
 }

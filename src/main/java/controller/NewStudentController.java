@@ -4,8 +4,8 @@ import model.Student;
 import services.StudentService;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -22,10 +22,11 @@ public class NewStudentController implements Serializable {
     private Map<String,String> countries;
     private Map<String,String> cities;
     private Student newStudent;
-    private String welcomeMessage;
 
-    @Inject
+    @EJB
     private StudentService newStudentService;
+
+    private Integer value = 5;
 
     @PostConstruct
     public void init() {
@@ -118,11 +119,16 @@ public class NewStudentController implements Serializable {
             cities = new HashMap<>();
     }
 
+    private void createSerialNumber() {
+        value++;
+        newStudent.setID(value);
+    }
+
     public void addNewStudent() {
-        newStudentService.registerStudent(this.newStudent);
-        this.newStudent = null;
-        //List update
-        this.init();
+        createSerialNumber();
+        newStudentService.registerStudent(newStudent);
+        newStudent = null;
+        init();//List update
     }
 
 }

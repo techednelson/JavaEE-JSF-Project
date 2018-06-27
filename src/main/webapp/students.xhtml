@@ -7,7 +7,13 @@
 
     <h:head>
         <title>Learn Spanish</title>
-        <link rel="stylesheet" href="css/students.css"/>
+        <style>
+            body {
+                border: 0;
+                margin: 0;
+                background-color: #6EB6D5;
+            }
+        </style>
     </h:head>
 
     <h:body>
@@ -17,10 +23,9 @@
             <p:dataTable id="studentsDataTable"
                              value="#{studentsController.students}"
                              var="student"
-                             rowKey="#{student.username}"
+                             rowKey="#{student.ID}"
                              selection="#{studentsController.studentSelected}"
-                             selectionMode="single"
-                             rendered="true">
+                             selectionMode="single">
 
                 <!--Header-->
                 <f:facet name="header">
@@ -28,6 +33,9 @@
                     <p:button value="Add Student" outcome="new_student" />
                 </f:facet>
 
+                <p:column headerText="ID">
+                    <h:outputText value="#{student.ID}" />
+                </p:column>
                 <p:column headerText="Username">
                     <h:outputText value="#{student.username}" />
                 </p:column>
@@ -40,19 +48,25 @@
                 <p:column headerText="Edit" style="width:50px">
 
                 </p:column>
+
                 <!--Footer-->
                 <f:facet name="footer">
-
                     <p:spacer height="5px;"/>
                 </f:facet>
 
             </p:dataTable>
-            <p:commandButton value="Delete"  actionListener="#{studentsController.deleteStudent}"  update=":form:studentsDataTable"/>
+            <p:commandButton value="delete"  actionListener="#{studentsController.deleteStudent}"  update=":#{p:component('studentsDataTable')}"/>
+            <p:commandButton value="update"  action="#{studentsController.editStudentRecord}"/>
+
+            <p:dialog header="Delete Confirmation" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+                <h:outputText value="Good Bye! We hope to see you soon"/>
+            </p:dialog>
         </h:form>
 
     </h:body>
     <script >
-
-
+        document.getElementById('delete').addEventListener("click", function dlg3() {
+            PF('dlg3').show();
+        });
     </script>
 </html>
