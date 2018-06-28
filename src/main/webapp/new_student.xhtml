@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
     xmlns:f = "http://java.sun.com/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:p="http://primefaces.org/ui">
+    xmlns:p="http://primefaces.org/ui"
+      xmlns:template="http://java.sun.com/jsf/composite/template">
     <h:head>
         <title>Learn Spanish</title>
         <style>
@@ -16,6 +17,9 @@
     </h:head>
 
     <h:body>
+
+        <template:header/>
+
         <h:form>
             <p:panel id="panel" header="New Student Registration">
                 <h:panelGrid columns="4" cellpadding="5">
@@ -124,9 +128,7 @@
                 <h:outputText value="Welcome to LearnSpanish Lessons"/>
             </p:dialog>
         </h:form>
-    </h:body>
-    <script >
 
-    </script>
+    </h:body>
 </html>
 
