@@ -6,6 +6,8 @@ import services.StudentService;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
@@ -57,6 +59,15 @@ public class StudentsController implements Serializable {
         studentService.deleteStudent(studentSelected);
         studentSelected = null;
         init();  //List update
+    }
+
+    public void showAboutMessage() {
+        addMessage("Powered by Prime Faces", "This is Java full stack application example developed following the Multilayer Architecture. With JSF Prime Faces framework in the frontend");
+    }
+
+    private void addMessage(String summary, String detail) {
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, detail);
+        FacesContext.getCurrentInstance().addMessage(null, message);
     }
 
 }

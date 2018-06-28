@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:template="http://java.sun.com/jsf/composite/template">
     <h:head>
         <title>Learn Spanish</title>
         <style>
@@ -17,56 +17,80 @@
     </h:head>
 
     <h:body>
+        <h:form id="nav">
+            <p:growl id="message" showDetail="true" />
+            <p:tabMenu activeIndex="#{param.i}">
+                <p:menuitem value="Home"  outcome="students" icon="ui-icon-home">
+                    <f:param name="i" value="0" />
+                </p:menuitem>
+                <p:menuitem value="New Registration"  outcome="new_student" icon="ui-icon-contact" style="width:32.8%">
+                    <f:param name="i" value="1" />
+                </p:menuitem>
+                <p:menuitem value="About"  oncomplete="PF('about').show()" icon="ui-icon-info" style="width:32.8%">
+                    <f:param name="i" value="2" />
+                </p:menuitem>
+            </p:tabMenu>
+        </h:form>
 
         <h:form id="form">
-
             <p:dataTable id="studentsDataTable"
                              value="#{studentsController.students}"
                              var="student"
                              rowKey="#{student.ID}"
                              selection="#{studentsController.studentSelected}"
                              selectionMode="single">
-
+                <p:button id="new_registration" value="New Registration" outcome="new_student" icon="ui-icon-disk"/>
                 <!--Header-->
                 <f:facet name="header">
                     Spanish Academy : Students' List
-                    <p:button value="Add Student" outcome="new_student" />
                 </f:facet>
-
-                <p:column headerText="ID">
-                    <h:outputText value="#{student.ID}" />
+                <!-- ID -->
+                <p:column headerText="ID" style="width:50px">
+                    <h:outputText value="#{student.ID}"/>
                 </p:column>
+                <!-- Username -->
                 <p:column headerText="Username">
                     <h:outputText value="#{student.username}" />
                 </p:column>
+                <!-- Firstname -->
                 <p:column headerText="Firstname">
                     <h:outputText value="#{student.firstname}" />
                 </p:column>
+                <!-- Lastname -->
                 <p:column headerText="Lastname">
                     <h:outputText value="#{student.lastname}" />
                 </p:column>
-                <p:column headerText="Edit" style="width:50px">
+                <!-- Edit -->
+                <p:column headerText="Edit" style="width:180px">
+                    <!-- Delete Button -->
+                    <p:commandButton value="Delete" actionListener="#{studentsController.deleteStudent}"  oncomplete="PF('delete').show()" update=":#{p:component('studentsDataTable')}" icon="ui-icon-close">
+                        <p:confirm header="Delete Confirmation" message="Are you sure?" icon="ui-icon-alert" />
+                    </p:commandButton>
 
+                    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                    </p:confirmDialog>
+
+                    <!-- Update Button -->
+                    <p:commandButton value="Update"  action="#{studentsController.editStudentRecord}" icon="ui-icon-arrowrefresh-1-w"/>
                 </p:column>
-
-                <!--Footer-->
-                <f:facet name="footer">
-                    <p:spacer height="5px;"/>
-                </f:facet>
-
+                <template:footer/>
             </p:dataTable>
-            <p:commandButton value="delete"  actionListener="#{studentsController.deleteStudent}"  update=":#{p:component('studentsDataTable')}"/>
-            <p:commandButton value="update"  action="#{studentsController.editStudentRecord}"/>
 
-            <p:dialog header="Delete Confirmation" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+            <!-- Delete Confirmation Message Dialog -->
+            <p:dialog header="Delete Confirmation" widgetVar="delete" showEffect="explode" hideEffect="bounce" height="100">
                 <h:outputText value="Good Bye! We hope to see you soon"/>
+            </p:dialog>
+
+            <!-- About Confirmation Message Dialog -->
+            <p:dialog header="About This Project" widgetVar="about" showEffect="explode" hideEffect="bounce" height="100">
+                <h:outputText value="This is a Java full stack application example developed following the Multilayer Architecture. With JSF Prime Faces 6.2 framework in the front-end"/>
             </p:dialog>
         </h:form>
 
     </h:body>
     <script >
-        document.getElementById('delete').addEventListener("click", function dlg3() {
-            PF('dlg3').show();
-        });
+
     </script>
 </html>
