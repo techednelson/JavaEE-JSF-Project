@@ -7,13 +7,7 @@
       xmlns:template="http://java.sun.com/jsf/composite/template">
     <h:head>
         <title>Learn Spanish</title>
-        <style>
-            body {
-                border: 0;
-                margin: 0;
-                background-color: #6EB6D5;
-            }
-        </style>
+        <link rel="stylesheet" href="resources/css/style.css"/>
     </h:head>
 
     <h:body>
@@ -31,9 +25,9 @@
                 <!--Header-->
                 <f:facet name="header">
                     Spanish Academy : Students' List
-                    <p:menuButton value="Options">
-                        <p:menuitem value="English" outcome="students" icon="ui-icon-disk"/>
-                        <p:menuitem value="Spanish" outcome="students_spanish" icon="ui-icon-arrowrefresh-1-w"/>
+                    <p:menuButton value="Language">
+                        <p:menuitem value="English" action="#{studentsController.changeToEnglishFromStudentsForm}" icon="ui-icon-arrowrefresh-1-w"/>
+                        <p:menuitem value="Spanish" action="#{studentsController.changeToSpanishFromStudentsForm}" icon="ui-icon-arrowrefresh-1-w"/>
                     </p:menuButton>
                 </f:facet>
                 <!-- ID -->
@@ -67,10 +61,6 @@
                     <!-- Update Button -->
                     <p:commandButton value="Update"  action="#{studentsController.editStudentRecord}" icon="ui-icon-arrowrefresh-1-w"/>
                 </p:column>
-                <!--Footer-->
-                <f:facet name="footer">
-                    <p:spacer height="5px"/>
-                </f:facet>
             </p:dataTable>
 
             <!-- Delete Confirmation Message Dialog -->
@@ -84,5 +74,6 @@
             </p:dialog>
         </h:form>
 
+        <template:footer/>
     </h:body>
 </html>

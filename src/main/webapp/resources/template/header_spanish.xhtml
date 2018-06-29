@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+    <composite:interface/>
+
+    <composite:implementation>
+        <h:form>
+            <p:growl id="message" showDetail="true" />
+            <p:tabMenu activeIndex="#{param.i}">
+                <p:menuitem value="Inicio"  outcome="students_spanish" icon="ui-icon-home">
+                    <f:param name="i" value="0" />
+                </p:menuitem>
+                <p:menuitem value="Registrarse"  outcome="new_student_spanish" icon="ui-icon-contact" style="width:32.8%">
+                    <f:param name="i" value="1" />
+                </p:menuitem>
+                <p:menuitem value="Acerca"  oncomplete="PF('about').show()" icon="ui-icon-info" style="width:32.8%">
+                    <f:param name="i" value="2" />
+                </p:menuitem>
+            </p:tabMenu>
+        </h:form>
+    </composite:implementation>
+
+</html>
