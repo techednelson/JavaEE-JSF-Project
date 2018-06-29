@@ -31,6 +31,10 @@
                 <!--Header-->
                 <f:facet name="header">
                     Spanish Academy : Students' List
+                    <p:menuButton value="Options">
+                        <p:menuitem value="English" outcome="students" icon="ui-icon-disk"/>
+                        <p:menuitem value="Spanish" outcome="students_spanish" icon="ui-icon-arrowrefresh-1-w"/>
+                    </p:menuButton>
                 </f:facet>
                 <!-- ID -->
                 <p:column headerText="ID" style="width:50px">
@@ -80,6 +84,5 @@
             </p:dialog>
         </h:form>
 
-        <template:footer/>
     </h:body>
 </html>

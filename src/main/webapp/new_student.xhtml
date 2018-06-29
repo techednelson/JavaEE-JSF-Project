@@ -50,14 +50,21 @@
                     <h:outputText value="" />
 
                     <p:outputLabel for="country" value="Country:" style="font-weight:bold"/>
-                    <p:inputText id="country" value="#{newStudentController.newStudent.country}" required="true"/>
+                    <p:selectOneMenu id="country" value="#{newStudentController.country}" style="width:150px">
+                        <p:ajax listener="#{newStudentController.onCountryChange}" update="city" />
+                        <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
+                        <f:selectItems value="#{newStudentController.countries}" />
+                    </p:selectOneMenu>
                     <p:message for="country" />
-                    <h:outputText value="" />
+                    <h:outputText value="#{newStudentController.country}" />
 
                     <p:outputLabel for="city" value="City:" style="font-weight:bold"/>
-                    <p:inputText id="city" value="#{newStudentController.newStudent.city}" required="true"/>
+                    <p:selectOneMenu id="city" value="#{newStudentController.city}" style="width:150px">
+                        <f:selectItem itemLabel="Select City" itemValue="" noSelectionOption="true" />
+                        <f:selectItems value="#{newStudentController.cities}" />
+                    </p:selectOneMenu>
                     <p:message for="city" />
-                    <h:outputText value="" />
+                    <h:outputText value="#{newStudentController.city}" />
 
                     <p:outputLabel for="street" value="Street:" style="font-weight:bold"/>
                     <p:inputText id="street" value="#{newStudentController.newStudent.street}" required="true" label="street">
