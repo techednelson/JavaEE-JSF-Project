@@ -21,7 +21,6 @@
                      rowKey="#{student.ID}"
                      selection="#{studentsController.studentSelected}"
                      selectionMode="single">
-            <p:button id="new_registration" value="Registrarse" outcome="new_student" icon="ui-icon-disk"/>
             <!--Header-->
             <f:facet name="header">
                 Academia de Espanol : Lista de estudiantes
@@ -47,7 +46,7 @@
                 <h:outputText value="#{student.lastname}" />
             </p:column>
             <!-- Edit -->
-            <p:column headerText="Editar" style="width:250px">
+            <p:column headerText="Editar" style="width:300px">
                 <!-- Delete Button -->
                 <p:commandButton value="Eliminar" actionListener="#{studentsController.deleteStudent}"  oncomplete="PF('delete').show()" update=":#{p:component('studentsDataTable')}" icon="ui-icon-close">
                     <p:confirm header="Confirmacion de eliminacion" message="Estas seguro?" icon="ui-icon-alert" />
@@ -70,7 +69,7 @@
 
         <!-- About Confirmation Message Dialog -->
         <p:dialog header="Acerca de este proyecto" widgetVar="about" showEffect="explode" hideEffect="bounce" height="100">
-            <h:outputText value="Este es una aplicaicon ejemplo desarrollada en Java de stack completo con base en una arquitectura multicapa. Con JSF Prime Faces 6.2 en el front-end"/>
+            <h:outputText value="Academia de espanol es una aplicacion ejemplo desarrollada en Java de stack completo con base en una arquitectura multicapa. Con JSF Prime Faces 6.2 en el front-end"/>
         </p:dialog>
     </h:form>
 

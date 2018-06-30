@@ -15,6 +15,8 @@
     <template:header_spanish/>
 
     <h:form>
+        <p:messages id="message" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true"/>
+
         <p:panel id="panel" header="Nuevo Registro">
             <h:panelGrid columns="4" cellpadding="5">
                 <p:outputLabel for="username" value="Usuario:" style="font-weight:bold"/>
@@ -44,21 +46,21 @@
                 <h:outputText value="" />
 
                 <p:outputLabel for="country" value="Pais:" style="font-weight:bold"/>
-                <p:selectOneMenu id="country" value="#{newStudentController.country}" style="width:150px">
+                <p:selectOneMenu id="country" value="#{newStudentController.country}" style="width:150px" required="true">
                     <p:ajax listener="#{newStudentController.onCountryChange}" update="city" />
                     <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
                     <f:selectItems value="#{newStudentController.countries}" />
                 </p:selectOneMenu>
                 <p:message for="country" />
-                <h:outputText value="#{newStudentController.country}" />
+                <h:outputText value="" />
 
                 <p:outputLabel for="city" value="Ciudad:" style="font-weight:bold"/>
-                <p:selectOneMenu id="city" value="#{newStudentController.city}" style="width:150px">
+                <p:selectOneMenu id="city" value="#{newStudentController.city}" style="width:150px" required="true">
                     <f:selectItem itemLabel="Select City" itemValue="" noSelectionOption="true" />
                     <f:selectItems value="#{newStudentController.cities}" />
                 </p:selectOneMenu>
                 <p:message for="city" />
-                <h:outputText value="#{newStudentController.city}" />
+                <h:outputText value="" />
 
                 <p:outputLabel for="street" value="Calle:" style="font-weight:bold"/>
                 <p:inputText id="street" value="#{newStudentController.newStudent.street}" required="true" label="street">
@@ -69,8 +71,7 @@
 
                 <p:outputLabel for="zip_code" value="Codigo Postal:" style="font-weight:bold"/>
                 <p:inputText id="zip_code" value="#{newStudentController.newStudent.zipCode}" required="true" label="zip_code">
-                    <f:validateLength minimum="5" maximum="5" />
-
+                    <f:validateLength minimum="5" maximum="7" />
                 </p:inputText>
                 <p:message for="zip_code" />
                 <h:outputText value="" />
@@ -84,7 +85,6 @@
 
                 <p:outputLabel for="email" value="Correo Electronico:" style="font-weight:bold"/>
                 <p:inputText id="email" value="#{newStudentController.newStudent.email}" required="true" label="email">
-                    <f:validateLength minimum="10" maximum="30" />
                 </p:inputText>
                 <p:message for="email" />
                 <h:outputText value="" />
@@ -109,10 +109,10 @@
             <p:commandButton id="submit"
                              value="Ingresar"
                              icon="ui-icon-check"
-                             update="panel"
+                             update="message, panel"
                              validateClient="true"
                              actionListener="#{newStudentController.addNewStudent}"
-                             oncomplete="PF('dlg3').show()"
+                             onsuccess="PF('dlg3').show()"
                              style="margin-right:10px">
                 <p:confirm header="Confirmacion de Registro" message="Estas seguro?" icon="ui-icon-alert" />
             </p:commandButton>
@@ -122,11 +122,16 @@
                 <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
             </p:confirmDialog>
 
-            <p:button value="Atras" outcome="students"  style="margin-right:10px"/>
+            <p:link value="Atras" outcome="students_spanish"  style="margin-right:10px"/>
         </p:panel>
 
         <p:dialog header="Se ha registrado correctamente!" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
             <h:outputText value="Bienvenido a las clases de espanol"/>
+        </p:dialog>
+
+        <!-- About Confirmation Message Dialog -->
+        <p:dialog header="Acerca de este proyecto" widgetVar="about" showEffect="explode" hideEffect="bounce" height="100">
+            <h:outputText value="Academia de espanol es una aplicacion ejemplo desarrollada en Java de stack completo con base en una arquitectura multicapa. Con JSF Prime Faces 6.2 en el front-end"/>
         </p:dialog>
     </h:form>
 

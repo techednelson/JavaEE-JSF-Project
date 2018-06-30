@@ -1,6 +1,5 @@
 package dao;
 
-import database.StudentsDB;
 import model.Student;
 
 import javax.ejb.Stateless;

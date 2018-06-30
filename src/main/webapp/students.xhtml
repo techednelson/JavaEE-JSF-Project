@@ -21,7 +21,6 @@
                          rowKey="#{student.ID}"
                          selection="#{studentsController.studentSelected}"
                          selectionMode="single">
-                <p:button id="new_registration" value="New Registration" outcome="new_student" icon="ui-icon-disk"/>
                 <!--Header-->
                 <f:facet name="header">
                     Spanish Academy : Students' List
@@ -49,7 +48,7 @@
                 <!-- Edit -->
                 <p:column headerText="Edit" style="width:250px">
                     <!-- Delete Button -->
-                    <p:commandButton value="Delete" actionListener="#{studentsController.deleteStudent}"  oncomplete="PF('delete').show()" update=":#{p:component('studentsDataTable')}" icon="ui-icon-close">
+                    <p:commandButton value="Delete" actionListener="#{studentsController.deleteStudent}"  oncomplete="PF('delete').show()" update=":form" icon="ui-icon-close">
                         <p:confirm header="Delete Confirmation" message="Are you sure?" icon="ui-icon-alert" />
                     </p:commandButton>
 
@@ -70,7 +69,7 @@
 
             <!-- About Confirmation Message Dialog -->
             <p:dialog header="About This Project" widgetVar="about" showEffect="explode" hideEffect="bounce" height="100">
-                <h:outputText value="This is a Java full stack application example developed following the Multilayer Architecture. With JSF Prime Faces 6.2 framework in the front-end"/>
+                <h:outputText value="Spanish Academy is a Java full stack application example developed following the Multilayer Architecture. With JSF Prime Faces 6.2 framework in the front-end"/>
             </p:dialog>
         </h:form>
 
