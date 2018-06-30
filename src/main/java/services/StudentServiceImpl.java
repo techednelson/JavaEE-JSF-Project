@@ -28,4 +28,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void deleteStudent(Student student) { studentDao.remove(student); }
 
+    @Override
+    public boolean lookForDuplicate(Student student) { return studentDao.findDuplicate(student) != null; }
+
 }

@@ -15,4 +15,6 @@ public interface StudentDao {
     void merge(Student student);
 
     void remove(Student student);
+
+    Student findDuplicate(Student student);
 }

@@ -25,6 +25,16 @@ public class StudentDaoImpl implements StudentDao {
     }
 
     @Override
+    public Student findDuplicate(Student student) {
+        for (Student studentInDB: StudentsDB.students) {
+            if(student.getUsername().toLowerCase().equals(studentInDB.getUsername().toLowerCase())) {
+                return studentInDB;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public void merge(Student student) {
         for (Student studentInDB: StudentsDB.students) {
             if(student.getID().equals(studentInDB.getID())) {

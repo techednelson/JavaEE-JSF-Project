@@ -126,26 +126,39 @@ public class NewStudentController implements Serializable {
         newStudent.setID(value);
     }
 
+    private boolean isStudentAlreadyInDB() {
+        return newStudentService.lookForDuplicate(newStudent);
+    }
+
     public void addNewStudent() {
-        try {
-            createSerialNumber();
-            newStudentService.registerStudent(newStudent);
-            newStudent = null;
-            country =  "";
-            city= "";
-            init();
-            FacesContext.getCurrentInstance()
-                    .addMessage(null, new FacesMessage (
-                            FacesMessage.SEVERITY_INFO,
-                            "Registration was successful! ",
-                            " Welcome to LearnSpanish Lessons"
-                    ));
-        } catch (Exception e) {
+        if(!isStudentAlreadyInDB()) {
+            try {
+                createSerialNumber();
+                newStudentService.registerStudent(newStudent);
+                newStudent = null;
+                country =  "";
+                city= "";
+                init();
+                FacesContext.getCurrentInstance()
+                        .addMessage(null, new FacesMessage (
+                                FacesMessage.SEVERITY_INFO,
+                                "Registration was successful! ",
+                                " Welcome to LearnSpanish Lessons"
+                        ));
+            } catch (Exception e) {
+                FacesContext.getCurrentInstance()
+                        .addMessage(null, new FacesMessage (
+                                FacesMessage.SEVERITY_FATAL,
+                                "Registration Error! ",
+                                " There was an error with your Registration, try again!"
+                        ));
+            }
+        } else {
             FacesContext.getCurrentInstance()
                     .addMessage(null, new FacesMessage (
                             FacesMessage.SEVERITY_FATAL,
                             "Registration Error! ",
-                            " There was an error with your Registration, try again!"
+                            " The username already exist in our system, try with different username!"
                     ));
         }
     }

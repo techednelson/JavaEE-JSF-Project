@@ -16,4 +16,6 @@ public interface StudentService {
 
     void deleteStudent(Student student);
 
+    boolean lookForDuplicate(Student student);
+
 }
