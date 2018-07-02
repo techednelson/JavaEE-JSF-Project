@@ -18,7 +18,8 @@ import static javax.faces.annotation.FacesConfig.Version.JSF_2_3;
 @SessionScoped
 public class CustomersController implements Serializable {
 
-    private Customer customer;
+    private Customer customerToAdd;
+    private Customer customerToUpdate;
     private List<Customer> customers;
     private Map<String, Map<String, String>> data = new HashMap<>();
     private String country;
@@ -29,19 +30,19 @@ public class CustomersController implements Serializable {
 
     @PostConstruct
     public void init() {
-        customer = new Customer();
+        customerToAdd = new Customer();
         customers = new ArrayList<>();
 
-        customer = new Customer(1, "Snake", "John", "Smith", new Date(), "USA", "New York", "apple 4", "12345", "012-345-6789", "snake@gmail.com", true);
-        customers.add(customer);
-        customer = new Customer(2, "Cowboy", "George", "Lopez", new Date(), "Greece", "Athens", "apple 4", "12345", "012-345-6789", "cowboy@gmail.com", true);
-        customers.add(customer);
-        customer = new Customer(3, "Batman", "Luis", "Williams", new Date(), "England", "Liverpool", "apple 4", "12345", "012-345-6789", "batman@gmail.com", true);
-        customers.add(customer);
-        customer = new Customer(4, "Hulk", "Miguel", "Woods", new Date(), "Spain", "Sevilla", "apple 4", "12345", "012-345-6789", "hulk@gmail.com", true);
-        customers.add(customer);
-        customer = new Customer(5, "Prime", "Jeniffer", "Fierro", new Date(), "Mexico", "Guadalajara", "apple 4", "12345", "012-345-6789", "prime@gmail.com", true);
-        customers.add(customer);
+        customerToAdd = new Customer(1, "Snake", "John", "Smith", new Date(), "USA", "New York", "apple 4", "12345", "0123456789", "snake@gmail.com", true);
+        customers.add(customerToAdd);
+        customerToAdd = new Customer(2, "Cowboy", "George", "Lopez", new Date(), "Greece", "Athens", "apple 4", "12345", "0123456789", "cowboy@gmail.com", true);
+        customers.add(customerToAdd);
+        customerToAdd = new Customer(3, "Batman", "Luis", "Williams", new Date(), "England", "Liverpool", "apple 4", "12345", "0123456789", "batman@gmail.com", true);
+        customers.add(customerToAdd);
+        customerToAdd = new Customer(4, "Hulk", "Miguel", "Woods", new Date(), "Spain", "Sevilla", "apple 4", "12345", "0123456789", "hulk@gmail.com", true);
+        customers.add(customerToAdd);
+        customerToAdd = new Customer(5, "Prime", "Jeniffer", "Fierro", new Date(), "Mexico", "Guadalajara", "apple 4", "12345", "0123456789", "prime@gmail.com", true);
+        customers.add(customerToAdd);
 
         countries = new HashMap<>();
         countries.put("Greece", "Greece");
@@ -90,11 +91,11 @@ public class CustomersController implements Serializable {
         map.put("Chicago", "Chicago");
         data.put("USA", map);
 
-        customer = new Customer();
+        customerToAdd = new Customer();
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer getCustomerToAdd() {
+        return customerToAdd;
     }
 
     public List<Customer> getCustomers() {
@@ -107,7 +108,7 @@ public class CustomersController implements Serializable {
 
     public void setCountry(String country) {
         this.country = country;
-        this.customer.setCountry(country);
+        this.customerToAdd.setCountry(country);
     }
 
     public String getCity() {
@@ -116,8 +117,10 @@ public class CustomersController implements Serializable {
 
     public void setCity(String city) {
         this.city = city;
-        this.customer.setCity(city);
+        this.customerToAdd.setCity(city);
     }
+
+    public Customer getCustomerToUpdate() { return customerToUpdate; }
 
     public Map<String, String> getCountries() {
         return countries;
@@ -136,39 +139,41 @@ public class CustomersController implements Serializable {
 
     private void createSerialNumber() {
         value++;
-        this.customer.setID(value);
+        this.customerToAdd.setID(value);
     }
 
     public void createNewCustomer() {
         createSerialNumber();
-        if (customers.contains(customer)) {
-            FacesMessage msg = new FacesMessage("Duplicated", "This customer has already been added");
+        if (customers.contains(customerToAdd)) {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Duplicated", "This customer has already been added");
             FacesContext.getCurrentInstance().addMessage(null, msg);
+            this.customerToAdd = null;
         } else {
-            customers.add(customer);
-            customer = new Customer();
+            customers.add(customerToAdd);
+            this.customerToAdd = null;
+            this.country = null;
+            this.city = null;
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Submit Confirmation", "The customer was registered successfully");
+            FacesContext.getCurrentInstance().addMessage(null, msg);
         }
-        customer = new Customer();
+        customerToAdd = new Customer();
+    }
+
+    public String searchCustomer(Customer customer) {
+        this.customerToUpdate = customer;
+        return "update_customer?faces-redirect=true";
     }
 
     public void updateStudent() {
-
-        try {
-            FacesContext.getCurrentInstance()
-                    .addMessage(null, new FacesMessage(
-                            FacesMessage.SEVERITY_INFO,
-                            "Update was successful! ",
-                            " Enjoy your Spanish Lessons"
-                    ));
-        } catch (Exception e) {
-            e.printStackTrace();
-            FacesContext.getCurrentInstance()
-                    .addMessage(null, new FacesMessage(
-                            FacesMessage.SEVERITY_FATAL,
-                            "Update Error! ",
-                            " There was an error with the update, try again!"
-                    ));
+        for(Customer customer: customers) {
+            if(this.customerToUpdate.getID().equals(customer.getID())) {
+                customers.remove(customer);
+                customers.add(customerToUpdate);
+                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Update Conformation", "The customer record was updated successfully");
+                FacesContext.getCurrentInstance().addMessage(null, msg);
+            }
         }
+        customerToUpdate = null;
     }
 
 

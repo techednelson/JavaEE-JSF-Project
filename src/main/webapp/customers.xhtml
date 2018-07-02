@@ -49,7 +49,7 @@
                         </p:commandLink>
 
                         <!-- Update Button -->
-                        <p:commandLink value="Update"   icon="ui-icon-arrowrefresh-1-w"/>
+                        <p:commandLink value="Update" action="#{customersController.searchCustomer(customer)}" icon="ui-icon-arrowrefresh-1-w"/>
                     </p:column>
                 </p:dataTable>
             </p:outputLabel>
@@ -60,13 +60,8 @@
                 <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
             </p:confirmDialog>
 
-            <!-- Delete Confirmation Message Dialog -->
-            <p:dialog header="Delete Confirmation" widgetVar="delete" showEffect="explode" hideEffect="bounce" height="100">
-                <h:outputText value="Good Bye! We hope to see you soon"/>
-            </p:dialog>
-
             <!-- About Confirmation Message Dialog -->
-            <p:dialog header="About This Project" widgetVar="about" showEffect="explode" hideEffect="bounce" height="100">
+            <p:dialog header="About This Project" widgetVar="about" modal="true" hideEffect="bounce" height="100">
                 <h:outputText value="Spanish Academy is a Java full stack application example developed following the Multilayer Architecture. With JSF Prime Faces 6.2 framework in the front-end"/>
             </p:dialog>
         </h:form>

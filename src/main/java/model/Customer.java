@@ -28,7 +28,7 @@ public class Customer implements Serializable {
 
     private String city;
 
-    @Size(min=10,max=35)
+    @Size(min=5,max=35)
     private String street;
 
     @Size(min=5,max=7)
@@ -116,11 +116,9 @@ public class Customer implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Customer)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return acceptTerms == customer.acceptTerms &&
-                Objects.equals(ID, customer.ID) &&
-                Objects.equals(username, customer.username) &&
+        return Objects.equals(username, customer.username) &&
                 Objects.equals(firstname, customer.firstname) &&
                 Objects.equals(lastname, customer.lastname) &&
                 Objects.equals(country, customer.country) &&
@@ -134,6 +132,6 @@ public class Customer implements Serializable {
     @Override
     public int hashCode() {
 
-        return Objects.hash(ID, username, firstname, lastname, country, city, street, zipCode, phoneNumber, email, acceptTerms);
+        return Objects.hash(username, firstname, lastname, country, city, street, zipCode, phoneNumber, email);
     }
 }

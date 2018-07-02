@@ -1,97 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf912cee-de7b-41af-a624-eb75101891a0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/customers.xhtml" afterDir="false" />
+    <list default="true" id="0f7c29b8-8882-438a-95bf-72d7c02f40a8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StudentDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StudentDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StudentsDB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/StudentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/StudentServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/NewStudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/StudentsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/new_student.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/new_customer.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/new_student_spanish.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/template/footer_spanish.xhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/customers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/customers.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/new_customer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/new_customer.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/template/header.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/template/header.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/template/header_spanish.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/students.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/students_spanish.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/update_student.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/update_customer.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/update_student_spanish.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/StudentDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/StudentDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/StudentsDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/StudentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/StudentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/NewStudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/StudentsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/dao/StudentDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/dao/StudentDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/dao/StudentsDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/model/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/services/StudentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/services/StudentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/view/NewStudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/classes/view/StudentsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/afterdark-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/afternoon-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/afterwork-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/black-tie-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/blitzer-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/bluesky-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/bootstrap-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/casablanca-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/cruze-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/cupertino-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/dark-hive-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/dot-luv-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/eggplant-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/excite-bike-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/flick-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/glass-x-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/home-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/hot-sneaks-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/humanity-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/le-frog-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/midnight-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/mint-choc-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/overcast-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/pepper-grinder-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/primefaces-6.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/redmond-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/rocket-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/sam-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/smoothness-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/south-street-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/start-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/sunny-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/swanky-purse-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/trontastic-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/ui-darkness-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/ui-lightness-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/lib/vader-1.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/new_student.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/new_student_spanish.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/resources/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/resources/template/footer.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/resources/template/footer_spanish.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/resources/template/header.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/resources/template/header_spanish.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/students.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/students_spanish.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/update_student.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/learnspanish/update_student_spanish.xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/update_customer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/update_customer.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/CustomersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/customers.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/customers.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/customers/WEB-INF/classes/controller/CustomersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/customers/WEB-INF/classes/controller/CustomersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/customers/WEB-INF/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/customers/WEB-INF/classes/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/customers/customers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/customers/customers.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/customers/new_customer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/customers/new_customer.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/customers/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/customers/resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/customers/resources/template/header.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/customers/resources/template/header.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/customers/update_customer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/customers/update_customer.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -102,30 +32,40 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/model/Customer.java">
+      <file leaf-file-name="customers.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/customers.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="136" column="61" selection-start-line="136" selection-start-column="61" selection-end-line="136" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="693">
+              <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.xhtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/template/header.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_customer.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/new_customer.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="30" column="109" selection-start-line="30" selection-start-column="109" selection-end-line="30" selection-end-column="109" />
             </state>
           </provider>
         </entry>
@@ -133,21 +73,29 @@
       <file leaf-file-name="CustomersController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/CustomersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            <state relative-caret-position="747">
+              <caret line="150" column="16" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3584#3585#0" expanded="true" />
-                <element signature="e#3615#3616#0" expanded="true" />
-                <element signature="e#3725#3726#0" expanded="true" />
-                <element signature="e#3755#3756#0" expanded="true" />
-                <element signature="e#3913#3914#0" expanded="true" />
-                <element signature="e#3940#3941#0" expanded="true" />
-                <element signature="e#4098#4099#0" expanded="true" />
-                <element signature="e#4130#4131#0" expanded="true" />
-                <element signature="e#4176#4177#0" expanded="true" />
-                <element signature="e#4205#4206#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Customer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update_customer.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/update_customer.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="101" column="30" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -160,19 +108,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/new_student.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Student.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/StudentsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/StudentsController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/students.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/template/header.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/NewCustomerController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/customers.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/new_customer.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/CustomersController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/customers.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/model/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/update_customer.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/CustomersController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/template/header.xhtml" />
       </list>
     </option>
   </component>
@@ -182,31 +124,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="projectJSF Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="y" value="25" />
-    <option name="width" value="784" />
-    <option name="height" value="1055" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1119" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -245,6 +169,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projectJSF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaEE-JSF-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -269,14 +201,23 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projectJSF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaEE-JSF-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -288,7 +229,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -350,93 +291,56 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bf912cee-de7b-41af-a624-eb75101891a0" name="Default" comment="" />
-      <created>1530524258239</created>
+      <changelist id="0f7c29b8-8882-438a-95bf-72d7c02f40a8" name="Default" comment="" />
+      <created>1530549949577</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1530524258239</updated>
-      <workItem from="1530524259732" duration="785000" />
-      <workItem from="1530525140099" duration="7000" />
-      <workItem from="1530525321129" duration="59000" />
-      <workItem from="1530528170668" duration="12997000" />
+      <updated>1530549949577</updated>
+      <workItem from="1530549961145" duration="15424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13848000" />
+    <option name="totallyTimeSpent" value="15424000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="784" height="1055" extended-state="4" />
+    <frame x="0" y="23" width="1119" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32977587" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="CDI" order="3" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32977587" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="right" id="CDI" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info anchor="right" id="Database" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="JSF" order="3" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25820568" />
-      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="JSF" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22234273" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.50271004" />
-      <window_info anchor="right" id="Bean Validation" order="3" weight="0.32977587" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info id="Learn" order="2" weight="0.32932165" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.14479166" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24976787" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info id="Web" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
+      <window_info id="Learn" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25820568" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.1691974" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="JSF" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Java Enterprise" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32977587" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
-      <window_info id="Learn" order="7" />
-      <window_info anchor="right" id="Database" order="7" weight="0.32977587" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Web" order="8" side_tool="true" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="CDI" order="10" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Bean Validation" order="11" weight="0.32977587" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -444,157 +348,62 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="77" lean-forward="true" selection-start-line="24" selection-start-column="77" selection-end-line="24" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" selection-start-line="37" selection-end-line="41" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" selection-start-line="37" selection-end-line="41" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/students_spanish.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="50" column="87" selection-start-line="50" selection-start-column="87" selection-end-line="50" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/StudentsDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/template/footer.xhtml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/NewCustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="135" column="23" lean-forward="true" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/template/header.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="170">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/new_customer.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/customers.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="56" column="40" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
+        <state relative-caret-position="345">
+          <caret line="30" column="109" selection-start-line="30" selection-start-column="109" selection-end-line="30" selection-end-column="109" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/CustomersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        <state relative-caret-position="747">
+          <caret line="150" column="16" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3584#3585#0" expanded="true" />
-            <element signature="e#3615#3616#0" expanded="true" />
-            <element signature="e#3725#3726#0" expanded="true" />
-            <element signature="e#3755#3756#0" expanded="true" />
-            <element signature="e#3913#3914#0" expanded="true" />
-            <element signature="e#3940#3941#0" expanded="true" />
-            <element signature="e#4098#4099#0" expanded="true" />
-            <element signature="e#4130#4131#0" expanded="true" />
-            <element signature="e#4176#4177#0" expanded="true" />
-            <element signature="e#4205#4206#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Customer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/update_customer.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="136" column="61" selection-start-line="136" selection-start-column="61" selection-end-line="136" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="387">
+          <caret line="101" column="30" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/customers.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/template/header.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>projectJSF:war</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Web</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -618,18 +427,6 @@
           </splitter-proportions>
         </settings>
       </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>projectJSF</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
@@ -644,7 +441,6 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: javax:javaee-web-api:8.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
