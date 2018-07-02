@@ -1,8 +1,2 @@
-view/NewStudentController.class
-view/StudentsController.class
-services/StudentServiceImpl.class
-dao/StudentsDB.class
-dao/StudentDao.class
-model/Student.class
-services/StudentService.class
-dao/StudentDaoImpl.class
+controller/CustomersController.class
+model/Customer.class

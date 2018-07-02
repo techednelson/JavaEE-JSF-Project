@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:template="http://java.sun.com/jsf/composite/template">
+    <h:head>
+        <title>Learn Spanish</title>
+        <link rel="stylesheet" href="resources/css/style.css"/>
+    </h:head>
+
+    <h:body>
+
+        <template:header/>
+
+        <h:form id="form">
+            <p:menuButton value="Language">
+                <p:menuitem value="English"  icon="ui-icon-arrowrefresh-1-w"/>
+                <p:menuitem value="Spanish"  icon="ui-icon-arrowrefresh-1-w"/>
+            </p:menuButton>
+            <p:outputLabel id="customers">
+                <p:dataTable id="customersTable"
+                             value="#{customersController.customers}"
+                             var="customer"
+                             rowKey="#{customer.ID}">
+                    <!--Header-->
+                    <f:facet name="header">
+                        Spanish Academy : Students' List
+                    </f:facet>
+                    <!-- Username -->
+                    <p:column headerText="Username">
+                        <h:outputText value="#{customer.username}" />
+                    </p:column>
+                    <!-- Firstname -->
+                    <p:column headerText="Firstname">
+                        <h:outputText value="#{customer.firstname}" />
+                    </p:column>
+                    <!-- Lastname -->
+                    <p:column headerText="Lastname">
+                        <h:outputText value="#{customer.lastname}" />
+                    </p:column>
+                    <!-- Edit -->
+                    <p:column headerText="" style="width:250px">
+                        <!-- Delete Button -->
+                        <p:commandLink value="Delete"  process=":form:customers" update=":form:customers" icon="ui-icon-close">
+                            <p:confirm header="Delete Confirmation" message="Are you sure?" icon="ui-icon-alert" />
+                            <p:collector value="#{customer}" removeFrom="#{customersController.customers}" unique="true"/>
+                        </p:commandLink>
+
+                        <!-- Update Button -->
+                        <p:commandLink value="Update"   icon="ui-icon-arrowrefresh-1-w"/>
+                    </p:column>
+                </p:dataTable>
+            </p:outputLabel>
+
+            <!-- Confirmation Dialog -->
+            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+            </p:confirmDialog>
+
+            <!-- Delete Confirmation Message Dialog -->
+            <p:dialog header="Delete Confirmation" widgetVar="delete" showEffect="explode" hideEffect="bounce" height="100">
+                <h:outputText value="Good Bye! We hope to see you soon"/>
+            </p:dialog>
+
+            <!-- About Confirmation Message Dialog -->
+            <p:dialog header="About This Project" widgetVar="about" showEffect="explode" hideEffect="bounce" height="100">
+                <h:outputText value="Spanish Academy is a Java full stack application example developed following the Multilayer Architecture. With JSF Prime Faces 6.2 framework in the front-end"/>
+            </p:dialog>
+        </h:form>
+
+        <template:footer/>
+    </h:body>
+</html>

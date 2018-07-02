@@ -1,8 +1,2 @@
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/services/StudentService.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/dao/StudentDaoImpl.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/view/NewStudentController.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/dao/StudentDao.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/model/Student.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/view/StudentsController.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/services/StudentServiceImpl.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/dao/StudentsDB.java
+/home/nelson/dev/JavaEE/Projects/JavaEE-JSF-Project/src/main/java/controller/CustomersController.java
+/home/nelson/dev/JavaEE/Projects/JavaEE-JSF-Project/src/main/java/model/Customer.java

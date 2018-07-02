@@ -9,7 +9,7 @@
         <param-value>redmond</param-value>
     </context-param>
     <welcome-file-list>
-        <welcome-file>students.xhtml</welcome-file>
+        <welcome-file>customers.xhtml</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>facesServlet</servlet-name>
