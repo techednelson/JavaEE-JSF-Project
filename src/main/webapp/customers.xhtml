@@ -6,28 +6,20 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:template="http://java.sun.com/jsf/composite/template">
     <h:head>
-        <title>Learn Spanish</title>
+        <title>Customers</title>
         <link rel="stylesheet" href="resources/css/style.css"/>
     </h:head>
 
     <h:body>
+        <template:header2/>
 
-        <template:header/>
-
-        <h:form id="form">
-            <p:menuButton value="Language">
-                <p:menuitem value="English"  icon="ui-icon-arrowrefresh-1-w"/>
-                <p:menuitem value="Spanish"  icon="ui-icon-arrowrefresh-1-w"/>
-            </p:menuButton>
+        <h:form id="formDataTable" style="clear: both; padding-top: 40px; width: 78%; margin-left: 11%">
             <p:outputLabel id="customers">
                 <p:dataTable id="customersTable"
                              value="#{customersController.customers}"
                              var="customer"
-                             rowKey="#{customer.ID}">
-                    <!--Header-->
-                    <f:facet name="header">
-                        Spanish Academy : Students' List
-                    </f:facet>
+                             rowKey="#{customer.ID}"
+                             style="color: #2E90BD">
                     <!-- Username -->
                     <p:column headerText="Username">
                         <h:outputText value="#{customer.username}" />
@@ -43,7 +35,7 @@
                     <!-- Edit -->
                     <p:column headerText="" style="width:250px">
                         <!-- Delete Button -->
-                        <p:commandLink value="Delete"  process=":form:customers" update=":form:customers" icon="ui-icon-close">
+                        <p:commandLink value="Delete"  process=":formDataTable:customers" update=":formDataTable:customers" icon="ui-icon-close">
                             <p:confirm header="Delete Confirmation" message="Are you sure?" icon="ui-icon-alert" />
                             <p:collector value="#{customer}" removeFrom="#{customersController.customers}" unique="true"/>
                         </p:commandLink>
@@ -66,6 +58,9 @@
             </p:dialog>
         </h:form>
 
+
         <template:footer/>
+
+
     </h:body>
 </html>
