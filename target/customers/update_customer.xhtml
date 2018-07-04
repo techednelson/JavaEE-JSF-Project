@@ -17,7 +17,7 @@
     <h:form>
         <p:messages id="message" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true"/>
 
-        <p:panel id="panel" header="Update contact details">
+        <p:panel id="panel" header="Update contact details" style="margin-top: 60px; width: 80%; margin-left: 10%; margin-right: 10%">
             <h:panelGrid columns="4"
                          cellpadding="5">
 
@@ -119,7 +119,7 @@
                 <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
             </p:confirmDialog>
 
-            <p:link value="Back" outcome="customers"  style="margin-right:10px"/>
+            <p:button value="Back" outcome="customers"  style="margin-right:10px"/>
         </p:panel>
 
         <!-- About Confirmation Message Dialog -->

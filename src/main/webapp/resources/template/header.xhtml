@@ -2,27 +2,24 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:composite="http://java.sun.com/jsf/composite">
 
-    <composite:interface/>
+<composite:interface/>
 
-    <composite:implementation>
-        <h:form>
-            <p:growl id="message" showDetail="true" />
-            <p:tabMenu activeIndex="#{param.i}">
-                <p:menuitem value="Home"  outcome="customers" icon="ui-icon-home">
-                    <f:param name="i" value="0" />
-                </p:menuitem>
-                <p:menuitem value="New Customer"  outcome="new_customer" icon="ui-icon-contact" style="width:32.8%">
-                    <f:param name="i" value="1" />
-                </p:menuitem>
-                <p:menuitem value="About"  oncomplete="PF('about').show()" icon="ui-icon-info" style="width:32.8%">
-                    <f:param name="i" value="2" />
-                </p:menuitem>
-            </p:tabMenu>
+<composite:implementation>
+        <h:form style="background-color: #455A7B; height: 70px">
+            <p:outputPanel deferred="true" style="padding: 15px">
+                <h2 style="float: left; margin-left: 10%; color: #FDFEFE; position: relative; bottom: 16px;">AFSE</h2>
+                <p:menuButton value="English" style="float: right; margin-top: 6px; margin-right: 10% " icon="ui-icon-flag">
+                    <p:menuitem value="English" />
+                    <p:menuitem value="Spanish" />
+                </p:menuButton>
+            </p:outputPanel>
         </h:form>
-    </composite:implementation>
+</composite:implementation>
 
 </html>
+
+
+

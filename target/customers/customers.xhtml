@@ -11,37 +11,52 @@
     </h:head>
 
     <h:body>
-        <template:header2/>
-
-        <h:form id="formDataTable" style="clear: both; padding-top: 40px; width: 78%; margin-left: 11%">
+        <template:header/>
+        <p:button value="New Customer" outcome="new_customer" style="clear: both; position: relative; right: 84px; margin-top: 40px" icon="ui-icon-plusthick"/>
+        <h:form id="formDataTable" style="padding-top: 20px; width: 80%; margin-left: 10%">
             <p:outputLabel id="customers">
                 <p:dataTable id="customersTable"
                              value="#{customersController.customers}"
                              var="customer"
+                             rows="10"
+                             paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15">
                              rowKey="#{customer.ID}"
-                             style="color: #2E90BD">
+                             style="color: #2E90BD; text-align: center">
+
                     <!-- Username -->
                     <p:column headerText="Username">
                         <h:outputText value="#{customer.username}" />
                     </p:column>
+
                     <!-- Firstname -->
                     <p:column headerText="Firstname">
                         <h:outputText value="#{customer.firstname}" />
                     </p:column>
+
                     <!-- Lastname -->
                     <p:column headerText="Lastname">
                         <h:outputText value="#{customer.lastname}" />
                     </p:column>
+
                     <!-- Edit -->
-                    <p:column headerText="" style="width:250px">
+                    <p:column headerText="" style="width:220px">
                         <!-- Delete Button -->
-                        <p:commandLink value="Delete"  process=":formDataTable:customers" update=":formDataTable:customers" icon="ui-icon-close">
+                        <p:commandLink style="padding: .3em 1em"
+                                       styleClass="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text ui-c"
+                                       value="Delete"
+                                       process=":formDataTable:customers"
+                                       update=":formDataTable:customers">
                             <p:confirm header="Delete Confirmation" message="Are you sure?" icon="ui-icon-alert" />
                             <p:collector value="#{customer}" removeFrom="#{customersController.customers}" unique="true"/>
                         </p:commandLink>
 
                         <!-- Update Button -->
-                        <p:commandLink value="Update" action="#{customersController.searchCustomer(customer)}" icon="ui-icon-arrowrefresh-1-w"/>
+                        <p:commandLink style="padding: .3em 1em"
+                                       styleClass="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-button-text ui-c"
+                                       value="Update"
+                                       action="#{customersController.searchCustomer(customer)}"/>
                     </p:column>
                 </p:dataTable>
             </p:outputLabel>
