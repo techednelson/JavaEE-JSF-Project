@@ -11,10 +11,12 @@
         <h:form style="background-color: #455A7B; height: 70px">
             <p:outputPanel deferred="true" style="padding: 15px">
                 <h2 style="float: left; margin-left: 10%; color: #FDFEFE; position: relative; bottom: 16px;">AFSE</h2>
-                <p:menuButton value="English" style="float: right; margin-top: 6px; margin-right: 10% " icon="ui-icon-flag">
-                    <p:menuitem value="English" />
-                    <p:menuitem value="Spanish" />
-                </p:menuButton>
+                <p:commandLink style="float: right; margin-top: 6px; margin-right: 10%" action="#{languageController.localeChanged}">
+                    <h:graphicImage value="resources/images/eng.png" title="English"/>
+                </p:commandLink>
+                <p:commandLink style="float: right; margin-top: 6px; margin-right: 1%" action="#{languageController.localeChanged}">
+                    <h:graphicImage value="resources/images/es.png" title="Spanish"/>
+                </p:commandLink>
             </p:outputPanel>
         </h:form>
 </composite:implementation>

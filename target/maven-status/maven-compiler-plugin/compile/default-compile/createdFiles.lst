@@ -1,2 +1,3 @@
-controller/CustomersController.class
 model/Customer.class
+controller/CustomersController.class
+controller/LanguageController.class
