@@ -18,6 +18,8 @@ import static javax.faces.annotation.FacesConfig.Version.JSF_2_3;
 @SessionScoped
 public class CustomersController implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private Customer customerToAdd;
     private Customer customerToUpdate;
     private List<Customer> customers;
@@ -26,7 +28,7 @@ public class CustomersController implements Serializable {
     private String city;
     private Map<String, String> countries;
     private Map<String, String> cities;
-    private Integer value = 5;
+    private Integer value = 20;
 
     @PostConstruct
     public void init() {
@@ -148,6 +150,7 @@ public class CustomersController implements Serializable {
     public void setCity(String city) {
         this.city = city;
         this.customerToAdd.setCity(city);
+        this.customerToUpdate.setCity(city);
     }
 
     public Customer getCustomerToUpdate() { return customerToUpdate; }
@@ -201,6 +204,8 @@ public class CustomersController implements Serializable {
                 customers.add(customerToUpdate);
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Update Conformation", "The customer record was updated successfully");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
+                this.country = null;
+                this.city = null;
             }
         }
         customerToUpdate = null;

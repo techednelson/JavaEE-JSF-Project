@@ -3,20 +3,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:composite="http://java.sun.com/jsf/composite">
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <composite:interface/>
 
 <composite:implementation>
         <h:form style="background-color: #455A7B; height: 70px">
-            <p:outputPanel deferred="true" style="padding: 15px">
-                <h2 style="float: left; margin-left: 10%; color: #FDFEFE; position: relative; bottom: 16px;">AFSE</h2>
-                <p:commandLink style="float: right; margin-top: 6px; margin-right: 10%" action="#{languageController.localeChanged(' ')}">
-                    <h:graphicImage value="resources/images/eng.png" title="English"/>
-                </p:commandLink>
-                <p:commandLink style="float: right; margin-top: 6px; margin-right: 1%" action="#{languageController.localeChanged('es')}">
-                    <h:graphicImage value="resources/images/es.png" title="Spanish"/>
-                </p:commandLink>
+            <p:outputPanel deferred="true" style="padding: 15px; margin-left: 10%;  margin-right: 10%">
+                <h1 style="float: left; color: #FDFEFE; position: relative; bottom: 16px;">AFSE</h1>
+                <h:selectOneMenu value="#{languageController.locale}"
+                                 onchange="submit()"
+                                 valueChangeListener="#{languageController.changeLanguage}"
+                                 style="float: right; margin-top: 6px">
+                    <f:selectItems value="#{languageController.countriesInMap}" />
+                </h:selectOneMenu>
             </p:outputPanel>
         </h:form>
 </composite:implementation>
