@@ -1,3 +1,4 @@
 model/Customer.class
 controller/CustomersController.class
 controller/LanguageController.class
+controller/CustomerValidator.class

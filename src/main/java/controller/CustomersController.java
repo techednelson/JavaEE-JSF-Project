@@ -30,6 +30,8 @@ public class CustomersController implements Serializable {
     private Map<String, String> cities;
     private Integer value = 20;
 
+    private CustomerValidator customerValidator;
+
     @PostConstruct
     public void init() {
         customerToAdd = new Customer();
@@ -176,20 +178,27 @@ public class CustomersController implements Serializable {
     }
 
     public void createNewCustomer() {
-        createSerialNumber();
-        if (customers.contains(customerToAdd)) {
-            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Duplicated", "This customer has already been added");
-            FacesContext.getCurrentInstance().addMessage(null, msg);
-            this.customerToAdd = null;
+        customerValidator = new CustomerValidator();
+        if(customerValidator.validate(customerToAdd)) {
+            createSerialNumber();
+            if (customers.contains(customerToAdd)) {
+                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Duplicated", "This customer has already been added");
+                FacesContext.getCurrentInstance().addMessage(null, msg);
+                this.customerToAdd = null;
+            } else {
+                customers.add(customerToAdd);
+                this.customerToAdd = null;
+                this.country = null;
+                this.city = null;
+                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Submit Confirmation", "The customer was registered successfully");
+                FacesContext.getCurrentInstance().addMessage(null, msg);
+            }
+            customerToAdd = new Customer();
         } else {
-            customers.add(customerToAdd);
-            this.customerToAdd = null;
-            this.country = null;
-            this.city = null;
-            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Submit Confirmation", "The customer was registered successfully");
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Validation Error", "There was an error with data provided, please try again");
             FacesContext.getCurrentInstance().addMessage(null, msg);
         }
-        customerToAdd = new Customer();
+
     }
 
     public String searchCustomer(Customer customer) {
@@ -198,17 +207,29 @@ public class CustomersController implements Serializable {
     }
 
     public void updateStudent() {
-        for(Customer customer: customers) {
-            if(this.customerToUpdate.getID().equals(customer.getID())) {
-                customers.remove(customer);
-                customers.add(customerToUpdate);
-                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Update Conformation", "The customer record was updated successfully");
+        customerValidator = new CustomerValidator();
+        if(customerValidator.validate(customerToUpdate)) {
+            for(Customer customer: customers) {
+                if(this.customerToUpdate.getID().equals(customer.getID())) {
+                    customers.remove(customer);
+                    customers.add(customerToUpdate);
+                    FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Update Conformation", "The customer record was updated successfully");
+                    FacesContext.getCurrentInstance().addMessage(null, msg);
+                    this.country = null;
+                    this.city = null;
+                    customerToUpdate = null;
+                    return;
+                }
+                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Validation Error", "There was an error with data provided, please try again");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
-                this.country = null;
-                this.city = null;
             }
+
+            customerToUpdate = null;
+        } else {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Validation Error", "There was an error with data entered, please try again");
+            FacesContext.getCurrentInstance().addMessage(null, msg);
         }
-        customerToUpdate = null;
+
     }
 
 
