@@ -69,9 +69,9 @@ public class Customer implements Serializable {
 
     public void setID(Integer ID) { this.ID = ID; }
 
-    public String getFirstname() {return firstname;}
+    public String getFirstName() {return firstname;}
 
-    public void setFirstname(String firstname) {this.firstname = firstname;}
+    public void setFirstName(String firstname) {this.firstname = firstname;}
 
     public String getLastname() {return lastname;}
 

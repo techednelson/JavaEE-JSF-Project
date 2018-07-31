@@ -20,61 +20,61 @@
                 <p:panel id="panel" header="#{msg['headerForNewCustomer']}" style="margin-top: 60px; width: 80%; margin-left: 10%; margin-right: 10%">
                     <h:panelGrid columns="3" cellpadding="5">
                         <p:outputLabel for="username" value="#{msg['username']}" style="font-weight:bold"/>
-                        <p:inputText id="username" value="#{customersController.customerToAdd.username}" required="true" label="username"/>
+                        <p:inputText id="username" value="#{customerController.customer.username}" required="true" label="username"/>
                         <p:message for="username" />
 
                         <p:outputLabel for="firstname" value="#{msg['firstName']}" style="font-weight:bold"/>
-                        <p:inputText id="firstname" value="#{customersController.customerToAdd.firstname}" required="true" label="firstname"/>
+                        <p:inputText id="firstname" value="#{customerController.customer.firstName}" required="true" label="firstname"/>
                         <p:message for="firstname" />
 
                         <p:outputLabel for="lastname" value="#{msg['lastName']}" style="font-weight:bold"/>
-                        <p:inputText id="lastname" value="#{customersController.customerToAdd.lastname}" required="true" label="lastname"/>
+                        <p:inputText id="lastname" value="#{customerController.customer.lastname}" required="true" label="lastname"/>
                         <p:message for="lastname" />
 
                         <p:outputLabel for="date" value="#{msg['birthDate']}" style="font-weight:bold"/>
-                        <p:calendar id="date" value="#{customersController.customerToAdd.birthDate}" required="true" showOn="button"/>
+                        <p:calendar id="date" value="#{customerController.customer.birthDate}" required="true" showOn="button"/>
                         <p:message for="date" />
 
                         <p:outputLabel for="country" value="#{msg['country']}" style="font-weight:bold"/>
-                        <p:selectOneMenu id="country" value="#{customersController.country}" style="width:150px" required="true">
-                            <p:ajax listener="#{customersController.onCountryChange}" update="city" />
+                        <p:selectOneMenu id="country" value="#{customerController.country}" style="width:150px" required="true">
+                            <p:ajax listener="#{customerController.onCountryChange}" update="city" />
                             <f:selectItem itemLabel="#{msg['selectCountry']}" itemValue="" noSelectionOption="true" />
-                            <f:selectItems value="#{customersController.countries}" />
+                            <f:selectItems value="#{customerController.countries}" />
                         </p:selectOneMenu>
                         <p:message for="country" />
 
                         <p:outputLabel for="city" value="#{msg['city']}" style="font-weight:bold"/>
-                        <p:selectOneMenu id="city" value="#{customersController.city}" style="width:150px" required="true">
+                        <p:selectOneMenu id="city" value="#{customerController.city}" style="width:150px" required="true">
                             <f:selectItem itemLabel="#{msg['selectCity']}" itemValue="" noSelectionOption="true" />
-                            <f:selectItems value="#{customersController.cities}" />
+                            <f:selectItems value="#{customerController.cities}" />
                         </p:selectOneMenu>
                         <p:message for="city" />
 
                         <p:outputLabel for="street" value="#{msg['street']}" style="font-weight:bold"/>
-                        <p:inputText id="street" value="#{customersController.customerToAdd.street}" required="true" label="street"/>
+                        <p:inputText id="street" value="#{customerController.customer.street}" required="true" label="street"/>
                         <p:message for="street" />
 
                         <p:outputLabel for="zip_code" value="#{msg['zipCode']}" style="font-weight:bold"/>
-                        <p:inputText id="zip_code" value="#{customersController.customerToAdd.zipCode}" required="true" label="zip_code" />
+                        <p:inputText id="zip_code" value="#{customerController.customer.zipCode}" required="true" label="zip_code" />
                         <p:message for="zip_code" />
 
                         <p:outputLabel for="phone" value="#{msg['phone']}" style="font-weight:bold"/>
-                        <p:inputText id="phone" value="#{customersController.customerToAdd.phoneNumber}" required="true" label="phone" />
+                        <p:inputText id="phone" value="#{customerController.customer.phoneNumber}" required="true" label="phone" />
                         <p:message for="phone" />
 
                         <p:outputLabel for="email" value="#{msg['email']}" style="font-weight:bold"/>
-                        <p:inputText id="email" value="#{customersController.customerToAdd.email}" label="email" required="true"/>
+                        <p:inputText id="email" value="#{customerController.customer.email}" label="email" required="true"/>
                         <p:message for="email" />
 
                         <p:outputLabel for="terms" value="#{msg['terms']}" style="font-weight:bold"/>
-                        <p:selectBooleanCheckbox id="terms" value="#{customersController.customerToAdd.acceptTerms}" required="true" requiredMessage="You must accept the terms &amp; conditions"/>
+                        <p:selectBooleanCheckbox id="terms" value="#{customerController.customer.acceptTerms}" required="true" requiredMessage="You must accept the terms &amp; conditions"/>
                         <p:message for="terms" />
                     </h:panelGrid>
 
                     <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
                         <p:panelGrid id="display" columns="2" columnClasses="label,value">
                             <h:outputText value="Birthdate:" />
-                            <h:outputText value="#{customersController.customerToAdd.birthDate}">
+                            <h:outputText value="#{customerController.customer.birthDate}">
                                 <f:convertDateTime pattern="MM/dd/yyyy" />
                             </h:outputText>
                         </p:panelGrid>
@@ -86,7 +86,7 @@
                                      value="#{msg['submit']}"
                                      icon="ui-icon-check"
                                      update="message, panel"
-                                     actionListener="#{customersController.createNewCustomer}"
+                                     actionListener="#{customerController.createNewCustomer}"
                                      style="margin-right:10px">
                         <p:confirm header="#{msg['registrationConfirmation']}" message="Are you sure?" icon="ui-icon-alert" />
                     </p:commandButton>

@@ -16,9 +16,9 @@
             <template:header/>
 
             <p:button value="#{msg['addButton']}" outcome="new_customer" style="clear: both; position: relative; right: 84px; margin-top: 40px" icon="ui-icon-plusthick"/>
-            <h:form id="formDataTable" style="padding-top: 20px; width: 80%; margin-left: 10%">
+            <h:form id="formDataTable" style="padding-top: 20px; width: 80%; margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <p:outputLabel id="customers">
-                    <p:dataTable value="#{customersController.customers}"
+                    <p:dataTable value="#{customerController.customers}"
                                  var="customer"
                                  emptyMessage="No records found with given criteria"
                                  rows="5"
@@ -42,11 +42,11 @@
                         </p:column>
 
                         <!-- Firstname -->
-                        <p:column  style="height: 50px" filterBy="#{customer.firstname}"  filterMatchMode="contains">
+                        <p:column style="height: 50px" filterBy="#{customer.firstName}" filterMatchMode="contains">
                             <f:facet name="header">
                                 <h:outputText value="#{msg['firstName_index']}"/>
                             </f:facet>
-                            <h:outputText value="#{customer.firstname}" />
+                            <h:outputText value="#{customer.firstName}" />
                         </p:column>
 
                         <!-- Lastname -->
@@ -65,13 +65,13 @@
                                            process=":formDataTable:customers"
                                            update=":formDataTable:customers">
                                 <p:confirm header="Delete Confirmation" message="Are you sure?" icon="ui-icon-alert" />
-                                <p:collector value="#{customer}" removeFrom="#{customersController.customers}" unique="true"/>
+                                <p:collector value="#{customer}" removeFrom="#{customerController.customers}" unique="true"/>
                             </p:commandLink>
 
                             <!-- Update Button -->
                             <p:commandLink style="padding: .3em 1em"
                                            styleClass="fa fa-edit"
-                                           action="#{customersController.searchCustomer(customer)}"/>
+                                           action="#{customerController.searchCustomer(customer)}"/>
                         </p:column>
                     </p:dataTable>
                 </p:outputLabel>

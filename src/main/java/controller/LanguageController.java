@@ -1,13 +1,12 @@
 package controller;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -26,13 +25,13 @@ public class LanguageController implements Serializable {
 
     private static Map<String,Object> countries;
     static{
-        countries = new LinkedHashMap<>();
+        countries = new HashMap<>();
         countries.put("English", Locale.ENGLISH); //label, value
         Locale spanish = new Locale("es");
         countries.put("Spanish", spanish);
     }
 
-    public Map<String, Object> getCountriesInMap() {
+    public Map<String, Object> getCountries() {
         return countries;
     }
 
