@@ -23,8 +23,6 @@ public class CustomerController implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private List<Customer> customers;
-    private Customer customer;
-    private Customer customerToUpdate;
     private Map<String, Map<String, String>> data = new HashMap<>();
     private String country;
     private String city;
@@ -35,18 +33,17 @@ public class CustomerController implements Serializable {
     @Inject
     private CustomerValidator customerValidator;
 
+    @Inject
+    private Customer customer;
+
     @PostConstruct
     public void init() {
-        Database.createCustomerDB();
         customers = Database.getCustomers();
         countries = Database.getCountries();
         data = Database.getCities();
-        customer = new Customer();
     }
 
     public List<Customer> getCustomers() { return customers; }
-
-    public void setCustomers(List<Customer> customers) { this.customers = customers; }
 
     public Customer getCustomer() {
         return customer;
@@ -54,6 +51,10 @@ public class CustomerController implements Serializable {
 
     public String getCountry() {
         return country;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public void setCountry(String country) {
@@ -70,8 +71,6 @@ public class CustomerController implements Serializable {
         this.customer.setCity(city);
     }
 
-
-    public Customer getCustomerToUpdate() { return customerToUpdate; }
 
     public Map<String, String> getCountries() {
         return countries;
@@ -93,25 +92,15 @@ public class CustomerController implements Serializable {
         this.customer.setID(value);
     }
 
-    private void reInit() {
-        this.customer = null;
-        this.country = null;
-        this.city = null;
-        customers = Database.getCustomers();
-        this.customer = new Customer();
-    }
-
-
     public void createNewCustomer() {
         if(customerValidator.validateCustomer(this.customer)) {
-            if (customers.contains(customer)) {
+            if (customers.contains(this.customer)) {
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Duplicated", "This customer has already been added");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
-                this.customer = null;
             } else {
                 createID();
-                Database.setCustomer(customer);
-                reInit();
+                Database.setCustomers(this.customer);
+                customers = Database.getCustomers();
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Submit Confirmation", "The customer was registered successfully");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
             }
@@ -123,36 +112,32 @@ public class CustomerController implements Serializable {
     }
 
     public String searchCustomer(Customer customer) {
-        this.customerToUpdate = customer;
+        if(customers.contains(customer)) {
+            this.setCustomer(customer);
+        }
+
         return "update_customer?faces-redirect=true";
     }
 
     public void updateCustomer() {
-        if(this.customer == null) System.out.println("yes");
-        if(customerValidator.validateCustomer(customerToUpdate)) {
-            for(Customer customer: customers) {
-                if(this.customerToUpdate.getID().equals(customer.getID())) {
-                    customers.remove(customer);
-                    customers.add(customerToUpdate);
+        if(customerValidator.validateCustomer(this.customer)) {
+            for(Customer item: customers) {
+                if(this.customer.getID().equals(item.getID())) {
+                    customers.remove(item);
+                    customers.add(this.customer);
                     FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Update Conformation", "The customer record was updated successfully");
                     FacesContext.getCurrentInstance().addMessage(null, msg);
-                    this.country = null;
-                    this.city = null;
-                    customerToUpdate = null;
                     return;
                 }
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Validation Error", "There was an error with data provided, please try again");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
             }
-
-            customerToUpdate = null;
         } else {
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Validation Error", "There was an error with data entered, please try again");
             FacesContext.getCurrentInstance().addMessage(null, msg);
         }
 
     }
-
 
 }
 

@@ -6,17 +6,19 @@ import java.util.*;
 
 public class Database {
 
-    public static  List<Customer> customers;
+    private static  List<Customer> customers;
 
     public static List<Customer> getCustomers() {
         return customers;
     }
 
-    public static void setCustomer(Customer customer) {
+    public static void setCustomers(Customer customer) {
         customers.add(customer);
     }
 
-    public static void createCustomerDB() {
+
+    static  {
+
         customers = new ArrayList<>();
         Customer customer;
 
@@ -60,7 +62,6 @@ public class Database {
         customers.add(customer);
         customer = new Customer(20, "Prime", "Edgar", "Parker", new Date(), "Mexico", "Puebla", "apple 4", "12345", "0123456789", "prime@gmail.com", true);
         customers.add(customer);
-
 
     }
 
