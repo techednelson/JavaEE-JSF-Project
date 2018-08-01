@@ -15,7 +15,7 @@
 
             <template:header/>
 
-            <p:button value="#{msg['addButton']}" outcome="new_customer" style="clear: both; position: relative; right: 84px; margin-top: 40px" icon="ui-icon-plusthick"/>
+            <p:button value="#{msg['addButton']}" outcome="customer" style="clear: both; position: relative; right: 84px; margin-top: 40px" icon="ui-icon-plusthick"/>
             <h:form id="formDataTable" style="padding-top: 20px; width: 80%; margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
                 <p:messages id="message" autoUpdate="true" severity="info, fatal" showSummary="true" showDetail="true"/>
                 <p:outputLabel id="customers">
@@ -51,11 +51,11 @@
                         </p:column>
 
                         <!-- Lastname -->
-                        <p:column  style="height: 50px" filterBy="#{customer.lastname}"  filterMatchMode="contains">
+                        <p:column style="height: 50px" filterBy="#{customer.lastName}" filterMatchMode="contains">
                             <f:facet name="header">
                                 <h:outputText value="#{msg['lastName_index']}"/>
                             </f:facet>
-                            <h:outputText value="#{customer.lastname}" />
+                            <h:outputText value="#{customer.lastName}" />
                         </p:column>
 
                         <!-- Edit -->
@@ -70,7 +70,7 @@
                             </p:commandLink>
 
                             <!-- Update Button -->
-                            <p:link style="padding: .3em 1em" styleClass="fa fa-edit" outcome="update_customer">
+                            <p:link style="padding: .3em 1em" styleClass="fa fa-edit" outcome="customer">
                                 <f:param name="customerID" value="#{customer.ID}" />
                             </p:link>
                         </p:column>
@@ -83,10 +83,6 @@
                     <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
                 </p:confirmDialog>
 
-                <!-- About Confirmation Message Dialog -->
-                <p:dialog header="About This Project" widgetVar="about" modal="true" hideEffect="bounce" height="100">
-                    <h:outputText value="Spanish Academy is a Java full stack application example developed following the Multilayer Architecture. With JSF Prime Faces 6.2 framework in the front-end"/>
-                </p:dialog>
             </h:form>
 
             <template:footer/>

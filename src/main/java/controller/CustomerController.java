@@ -2,6 +2,7 @@ package controller;
 
 import database.Database;
 import model.Customer;
+import validation.CustomerValidator;
 
 import javax.annotation.PostConstruct;
 import javax.faces.annotation.FacesConfig;
@@ -29,6 +30,7 @@ public class CustomerController implements Serializable {
     private Map<String, String> countries;
     private Map<String, String> cities;
     private Integer value = 20;
+    private boolean isUpdate;
 
     @Inject
     private CustomerValidator customerValidator;
@@ -92,14 +94,35 @@ public class CustomerController implements Serializable {
         this.customer.setID(value);
     }
 
-    public void createNewCustomer() {
-        if(customerValidator.validateCustomer(this.customer)) {
-            if (customers.contains(this.customer)) {
+    public void serviceRequest(Customer customer) {
+        if(isUpdate) {
+            updateCustomer(this.customer);
+        } else {
+            createNewCustomer(customer);
+        }
+    }
+
+    public void selectCRUDMethod(Integer id) {
+        if(id  == null) {
+            isUpdate = false;
+        } else {
+            isUpdate = true;
+            for (Customer item : customers) {
+                if(id.equals(item.getID())) {
+                    this.customer = item;
+                }
+            }
+        }
+    }
+
+    private void createNewCustomer(Customer customer) {
+        if(customerValidator.validateCustomer(customer)) {
+            if (customers.contains(customer) && !isUpdate) {
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Duplicated", "This customer has already been added");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
             } else {
                 createID();
-                Database.addCustomer(this.customer);
+                Database.addCustomer(customer);
                 customers = Database.getCustomers();
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Submit Confirmation", "The customer was registered successfully");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
@@ -111,31 +134,12 @@ public class CustomerController implements Serializable {
 
     }
 
-    public void deleteCustomer(Customer customer) {
-        if(customer != null) {
-            Database.removeCustomer(customer);
-            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Delete Confirmation", "The customer was removed successfully");
-            FacesContext.getCurrentInstance().addMessage(null, msg);
-        } else {
-            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Delete failed", "There was a problem removing customer");
-            FacesContext.getCurrentInstance().addMessage(null, msg);
-        }
-    }
-
-    public void searchCustomer(Integer id) {
-        for(Customer item : customers) {
-            if(item.getID().equals(id)) this.customer = item;
-        }
-
-
-    }
-
-    public void updateCustomer() {
-        if(customerValidator.validateCustomer(this.customer)) {
+    private void updateCustomer(Customer customer) {
+        if(customerValidator.validateCustomer(customer) && isUpdate) {
             for(Customer item: customers) {
-                if(this.customer.getID().equals(item.getID())) {
+                if(customer.getID().equals(item.getID())) {
                     customers.remove(item);
-                    customers.add(this.customer);
+                    customers.add(customer);
                     FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Update Conformation", "The customer record was updated successfully");
                     FacesContext.getCurrentInstance().addMessage(null, msg);
                     return;
@@ -148,6 +152,18 @@ public class CustomerController implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, msg);
         }
 
+    }
+
+    public void deleteCustomer(Customer customer) {
+        if(customer != null) {
+            Database.removeCustomer(customer);
+            customers = Database.getCustomers();
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Delete Confirmation", "The customer was removed successfully");
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+        } else {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Delete failed", "There was a problem removing customer");
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+        }
     }
 
 }

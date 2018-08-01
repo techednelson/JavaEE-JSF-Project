@@ -9,34 +9,38 @@ public class Customer implements Serializable {
 
     private Integer ID;
 
-    @Size(min=3, max=10, message="UserName should not be empty")
-    @Pattern(regexp = "^\\b\\pL\\w*(?:-\\pL\\w*)*\\b", message = "username can not have blank spaces")
+    @Size(min=3, max=10, message="The Username must contain between 5 and 35 characters")
+    @Pattern(regexp = "^\\b\\pL\\w*(?:-\\pL\\w*)*\\b", message = "Username can not have blank spaces")
     private String username;
 
-    @Size(min=3, max=10,  message="FirstName should not be empty")
-    @Pattern(regexp = "^\\b\\pL+(?:-\\pL+)*\\b", message = "FirstName can not have blank spaces or numbers")
-    private String firstname;
+    @Size(min=3, max=10,  message="The First Name must contain between 5 and 35 characters")
+    @Pattern(regexp = "^\\b\\pL+(?:-\\pL+)*\\b", message = "The First Name can not have blank spaces or numbers")
+    private String firstName;
 
-    @Size(min=3, max=10, message="LastName should not be empty")
+    @Size(min=3, max=10, message="The Last Name must contain between 5 and 35 characters")
     @Pattern(regexp = "^\\b\\pL+(?:-\\pL+)*\\b", message = "LastName can not have blank spaces or numbers")
-    private String lastname;
+    private String lastName;
 
     @Past
     private Date birthDate;
 
+    @NotNull(message = "You must select a country")
+    @Size(min = 1, message = "You must select a country")
     private String country;
 
+    @NotNull(message = "You must select a country")
+    @Size(min = 1, message = "You must select a country")
     private String city;
 
-    @Size(min=5,max=35)
+    @Size(min=5, max=35, message="The Street must contain between 5 and 35 characters")
     private String street;
 
-    @Size(min=5,max=7)
-    @Pattern(regexp = "^\\d+", message = "Zip Code can not have letters")
+    @Size(min=5, max=7, message="The Zip Code must contain between 5 and 35 characters")
+    @Pattern(regexp = "^\\d+", message = "Zip Code must contain only letters")
     private String zipCode;
 
-    @Size(min=10,max=10)
-    @Pattern(regexp="^\\d+", message = "phone number must follow the pattern xxx-xxx-xxxx")
+    @Size(min=10, max=10, message = "The Phone length must be 10 digits")
+    @Pattern(regexp="^\\d+", message = "The Phone number must follow the pattern xxx-xxx-xxxx")
     private String phoneNumber;
 
     @Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", message="Invalid Email")
@@ -47,14 +51,14 @@ public class Customer implements Serializable {
 
     public Customer() { }
 
-    public Customer(Integer ID, String username, String firstname,
-                    String lastname, Date birthDate, String country,
+    public Customer(Integer ID, String username, String firstName,
+                    String lastName, Date birthDate, String country,
                     String city, String street, String zipCode,
                     String phoneNumber, String email, boolean acceptTerms) {
         this.ID = ID;
         this.username = username;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.birthDate = birthDate;
         this.country = country;
         this.city = city;
@@ -69,13 +73,13 @@ public class Customer implements Serializable {
 
     public void setID(Integer ID) { this.ID = ID; }
 
-    public String getFirstName() {return firstname;}
+    public String getFirstName() {return firstName;}
 
-    public void setFirstName(String firstname) {this.firstname = firstname;}
+    public void setFirstName(String firstname) {this.firstName = firstname;}
 
-    public String getLastname() {return lastname;}
+    public String getLastName() {return lastName;}
 
-    public void setLastname(String lastname) {this.lastname = lastname;}
+    public void setLastName(String lastName) {this.lastName = lastName;}
 
     public String getUsername() {return username;}
 
@@ -119,8 +123,8 @@ public class Customer implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
         return Objects.equals(username, customer.username) &&
-                Objects.equals(firstname, customer.firstname) &&
-                Objects.equals(lastname, customer.lastname) &&
+                Objects.equals(firstName, customer.firstName) &&
+                Objects.equals(lastName, customer.lastName) &&
                 Objects.equals(country, customer.country) &&
                 Objects.equals(city, customer.city) &&
                 Objects.equals(street, customer.street) &&
@@ -132,6 +136,6 @@ public class Customer implements Serializable {
     @Override
     public int hashCode() {
 
-        return Objects.hash(username, firstname, lastname, country, city, street, zipCode, phoneNumber, email);
+        return Objects.hash(username, firstName, lastName, country, city, street, zipCode, phoneNumber, email);
     }
 }
