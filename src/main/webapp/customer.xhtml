@@ -105,7 +105,6 @@
                                  icon="ui-icon-check"
                                  update="message, panel"
                                  validateClient="true"
-                                 onkeypress="removeLabelBackgroundColor()"
                                  actionListener="#{customerController.serviceRequest(customerController.customer)}"
                                  style="margin-right:10px">
                     <p:confirm header="#{msg['processConfirmation']}" message="Are you sure?" icon="ui-icon-alert" />
@@ -122,13 +121,6 @@
 
         <template:footer/>
     </f:view>
-    <script>
-        function removeLabelBackgroundColor() {
-            document.getElementsByClassName("custom").classList.remove("ui-widget");
-            document.getElementsByClassName("custom").classList.remove("ui-state-error");
-
-        }
-    </script>
 </h:body>
 </html>
 

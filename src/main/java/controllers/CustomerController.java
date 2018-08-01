@@ -29,7 +29,6 @@ public class CustomerController implements Serializable {
     private String city;
     private Map<String, String> countries;
     private Map<String, String> cities;
-    private Integer value;
     private boolean isUpdate;
 
     @Inject
@@ -82,10 +81,11 @@ public class CustomerController implements Serializable {
     }
 
     public void onCountryChange() {
-        if (country != null && !country.equals(""))
+        if (country != null && !country.equals("")) {
             cities = data.get(country);
-        else
+        } else {
             cities = new HashMap<>();
+        }
     }
 
     private void createID() {
@@ -93,8 +93,8 @@ public class CustomerController implements Serializable {
         for(Customer customer : customers) {
             idList.add(customer.getID());
         }
-        this.value = Collections.max(idList) + 1;
-        this.customer.setID(this.value);
+        Integer value = Collections.max(idList) + 1;
+        this.customer.setID(value);
     }
 
     public void serviceRequest(Customer customer) {
@@ -113,6 +113,8 @@ public class CustomerController implements Serializable {
             for (Customer item : customers) {
                 if(id.equals(item.getID())) {
                     this.customer = item;
+                    this.country = item.getCountry();
+                    this.city = item.getCity();
                 }
             }
         }
