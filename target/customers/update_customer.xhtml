@@ -15,6 +15,10 @@
         <template:header/>
 
         <h:form>
+            <f:metadata>
+                <f:viewParam name="customerID" value="#{customerController.customer.ID}" />
+                <f:event type="preRenderView" listener="#{customerController.searchCustomer(customerController.customer.ID)}" />
+            </f:metadata>
             <p:messages id="message" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true"/>
 
             <p:panel id="panel" header="#{msg['headerForUpdateCustomer']}" style="margin-top: 60px; width: 80%; margin-left: 10%; margin-right: 10%">

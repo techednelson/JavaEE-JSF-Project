@@ -17,6 +17,7 @@
 
             <p:button value="#{msg['addButton']}" outcome="new_customer" style="clear: both; position: relative; right: 84px; margin-top: 40px" icon="ui-icon-plusthick"/>
             <h:form id="formDataTable" style="padding-top: 20px; width: 80%; margin-left: 10%; margin-right: 10%; margin-bottom: 7%">
+                <p:messages id="message" autoUpdate="true" severity="info, fatal" showSummary="true" showDetail="true"/>
                 <p:outputLabel id="customers">
                     <p:dataTable value="#{customerController.customers}"
                                  var="customer"
@@ -63,16 +64,15 @@
                             <p:commandLink style="padding: .3em 1em"
                                            styleClass="fa fa-trash"
                                            process=":formDataTable:customers"
+                                           actionListener="#{customerController.deleteCustomer(customer)}"
                                            update=":formDataTable:customers">
                                 <p:confirm header="Delete Confirmation" message="Are you sure?" icon="ui-icon-alert" />
-                                <p:collector value="#{customer}" removeFrom="#{customerController.customers}" unique="true"/>
                             </p:commandLink>
 
                             <!-- Update Button -->
-                            <p:commandLink style="padding: .3em 1em"
-                                           styleClass="fa fa-edit"
-                                           outcome="update_customer"
-                                           action="#{customerController.searchCustomer(customer)}"/>
+                            <p:link style="padding: .3em 1em" styleClass="fa fa-edit" outcome="update_customer">
+                                <f:param name="customerID" value="#{customer.ID}" />
+                            </p:link>
                         </p:column>
                     </p:dataTable>
                 </p:outputLabel>

@@ -4,7 +4,6 @@ import database.Database;
 import model.Customer;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -18,7 +17,7 @@ import static javax.faces.annotation.FacesConfig.Version.JSF_2_3;
 
 @Named
 @FacesConfig(version = JSF_2_3)
-@SessionScoped
+@ViewScoped
 public class CustomerController implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -100,7 +99,7 @@ public class CustomerController implements Serializable {
                 FacesContext.getCurrentInstance().addMessage(null, msg);
             } else {
                 createID();
-                Database.setCustomers(this.customer);
+                Database.addCustomer(this.customer);
                 customers = Database.getCustomers();
                 FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Submit Confirmation", "The customer was registered successfully");
                 FacesContext.getCurrentInstance().addMessage(null, msg);
@@ -112,12 +111,23 @@ public class CustomerController implements Serializable {
 
     }
 
-    public String searchCustomer(Customer customer) {
-        if(customers.contains(customer)) {
-            this.setCustomer(customer);
+    public void deleteCustomer(Customer customer) {
+        if(customer != null) {
+            Database.removeCustomer(customer);
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Delete Confirmation", "The customer was removed successfully");
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+        } else {
+            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_FATAL,"Delete failed", "There was a problem removing customer");
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+        }
+    }
+
+    public void searchCustomer(Integer id) {
+        for(Customer item : customers) {
+            if(item.getID().equals(id)) this.customer = item;
         }
 
-        return "update_customer?faces-redirect=true";
+
     }
 
     public void updateCustomer() {

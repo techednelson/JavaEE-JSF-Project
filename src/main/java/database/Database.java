@@ -12,11 +12,6 @@ public class Database {
         return customers;
     }
 
-    public static void setCustomers(Customer customer) {
-        customers.add(customer);
-    }
-
-
     static  {
 
         customers = new ArrayList<>();
@@ -64,6 +59,13 @@ public class Database {
         customers.add(customer);
 
     }
+
+    public static void addCustomer(Customer customer) {
+        customers.add(customer);
+    }
+
+    public static void removeCustomer(Customer customer) { customers.remove(customer); }
+
 
     public static Map<String, String> getCountries() {
 
