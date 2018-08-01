@@ -24,23 +24,21 @@ public class Customer implements Serializable {
     @Past
     private Date birthDate;
 
-    @NotNull(message = "You must select a country")
-    @Size(min = 1, message = "You must select a country")
+    @NotBlank
     private String country;
 
-    @NotNull(message = "You must select a country")
-    @Size(min = 1, message = "You must select a country")
+    @NotBlank
     private String city;
 
     @Size(min=5, max=35, message="The Street must contain between 5 and 35 characters")
     private String street;
 
-    @Size(min=5, max=7, message="The Zip Code must contain between 5 and 35 characters")
-    @Pattern(regexp = "^\\d+", message = "Zip Code must contain only letters")
+    @Size(min=6, max=6, message="The Zip Code must contain 6 numbers")
+    @Pattern(regexp = "^\\d+", message = "Zip Code must contain only numbers")
     private String zipCode;
 
-    @Size(min=10, max=10, message = "The Phone length must be 10 digits")
-    @Pattern(regexp="^\\d+", message = "The Phone number must follow the pattern xxx-xxx-xxxx")
+    @Size(min=10, max=10, message = "The Phone length must be 10 numbers")
+    @Pattern(regexp="^\\d+", message = "The Phone number must hava only numbers")
     private String phoneNumber;
 
     @Pattern(regexp="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", message="Invalid Email")

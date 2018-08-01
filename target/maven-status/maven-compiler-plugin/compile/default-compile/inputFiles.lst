@@ -1,5 +1,5 @@
-/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/controller/LanguageController.java
-/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/controller/CustomerController.java
-/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/database/Database.java
-/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/validation/CustomerValidator.java
-/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/model/Customer.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/controllers/CustomerController.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/model/Customer.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/database/Database.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/controllers/LanguageController.java
+/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/validation/ServerValidator.java

@@ -1,5 +1,5 @@
-controller/CustomerController.class
+controllers/CustomerController.class
+validation/ServerValidator.class
 database/Database.class
 model/Customer.class
-validation/CustomerValidator.class
-controller/LanguageController.class
+controllers/LanguageController.class
