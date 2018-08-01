@@ -1,7 +1,7 @@
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/controller/newCustomerController.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/controller/CustomerController.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/model/Customer.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/database/Database.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/controller/LanguageController.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/controller/updateCustomerController.java
-/Users/madagaskar/dev/JavaEE/JavaEE-JSF-Project/src/main/java/controller/CustomerValidator.java
+/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/controller/LanguageController.java
+/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/controller/CustomerController.java
+/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/database/Database.java
+/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/controller/updateCustomerController.java
+/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/model/Customer.java
+/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/controller/newCustomerController.java
+/home/nelson/dev/JavaEE/Front-End/JavaEE-Front-End-JSF/src/main/java/controller/CustomerValidator.java

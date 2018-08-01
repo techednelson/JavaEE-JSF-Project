@@ -2,6 +2,6 @@ controller/CustomerController.class
 controller/updateCustomerController.class
 database/Database.class
 model/Customer.class
-controller/CustomerValidator.class
 controller/LanguageController.class
+controller/CustomerValidator.class
 controller/newCustomerController.class

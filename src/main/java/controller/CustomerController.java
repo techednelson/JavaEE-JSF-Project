@@ -4,6 +4,7 @@ import database.Database;
 import model.Customer;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -17,7 +18,7 @@ import static javax.faces.annotation.FacesConfig.Version.JSF_2_3;
 
 @Named
 @FacesConfig(version = JSF_2_3)
-@ViewScoped
+@SessionScoped
 public class CustomerController implements Serializable {
 
     private static final long serialVersionUID = 1L;
